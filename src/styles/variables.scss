@@ -1,0 +1,37 @@
+//SCREEN SIZES FOR RESPONSIVE
+$screen-xs-min: 575px;
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl: 1200px;
+$screen-sm-max: 767px;
+$screen-md-max: 991px;
+$screen-lg-max: 1199px;
+
+// COLORS
+$primary: #585490;
+$primary-light: #6E67D3;
+$primary-dark: #1B1841;
+$secondary: #C4D043;
+$secondary-bajo: #DCE775;
+$black: #000000;
+$white: #FFFFFF;
+$gray: #F3F2EF;
+$gray-dark: #9E9E9E;
+$gradiante-linear: linear-gradient(180deg, #241E6B 30.21%, #79186F 100%);
+
+// F O N T S 
+
+// Fonts weight:
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 700;
+
+// Font Sizes
+$body: 14px;
+$body2: 16px;
+
+// Fonts Colors:
+$txt-primary: #000000;
+$txt-secondary: #9E9E9E;
