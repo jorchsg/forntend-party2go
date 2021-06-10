@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+.login-image__container{
+    display: none;
+    img{
+        height: inherit;
+    }
+    background: $primary;
+
+}
+.form-container{
+    background: $primary;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    align-items: flex-end;
+    justify-content: center;
+    &__subcontainer{
+        background: $gray;
+        height: 433px;
+        width: 318px; 
+        border-radius: 8px;
+    }
+}

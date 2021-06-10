@@ -1,9 +1,13 @@
 import React from 'react';
+import Login from './modules/login/login';
+import { Switch, Route, } from "react-router-dom";
 import './index.scss';
 
 function App() {
   return (
-    <h1>Hello Party2Go</h1>
+    <Switch>
+        <Route path="/login" component={Login} />
+    </Switch>
   );
 }
 
