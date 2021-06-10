@@ -1,23 +1,94 @@
-@import '../../styles/variables.scss';
 .login-image__container{
     display: none;
     img{
         height: inherit;
     }
-    background: $primary;
-
 }
-.form-container{
-    background: $primary;
+.form{
+    * {
+        font-family: var(--default-font-family);
+    }
+    background: var(--default-primary-color);
     width: 100vw;
     height: 100vh;
     display: grid;
     align-items: flex-end;
     justify-content: center;
     &__subcontainer{
-        background: $gray;
+        background: var(--default-secondary-background-color);
         height: 433px;
-        width: 318px; 
+        width: calc(318px - 48px);
         border-radius: 8px;
+        padding: 18px 24px;
+        form{
+            display: flex;
+            flex-direction: column;
+            input{
+                max-width:270px;
+                padding: 10px 16px;
+                border-radius: 4px;
+                border: none;
+                color: var(--default-primary-font-color);
+                font-weight: 500;
+                &:focus{
+                    // border: none;
+                    border: 1px solid red;
+                }
+                &::placeholder{
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 22px;
+                    font-family: var(--default-font-family);
+                    color: var(--default-secondary-font-color);
+                }
+            }
+            label{
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 22px;
+                padding:16px 0 4px 0;
+            }
+        }
+        
     }
+}
+
+.additional-info{
+    display: flex;
+    flex-direction: column;
+    .error{
+        display: none;
+        text-align: start;
+        color: rgba(255, 0, 0, 0.596);
+        padding: 4px 0 0 0;
+    }
+    .forgot-password{
+        text-align: end;
+        padding: 8px 0 0 0;
+        color: var(--default-secondary-font-color);
+    }
+    .error,.forgot-password{
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+.button-wrapper{
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    padding-top: 18px;
+}
+.login-button{
+    border: none;
+    background: var(--default-primary-color);
+    color: white;
+    border-radius: 10px;
+    padding: 10px 24px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    height: 40px;
+    width: 270px;
+
 }
