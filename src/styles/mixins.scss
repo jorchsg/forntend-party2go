@@ -1,19 +1,26 @@
 @import './variables.scss';
-@mixin telefono{
-  @media only screen and (min-width: $screen-xs-min){
+
+@mixin phone{
+  @media only screen and (min-width: $screen-xs-mi){
       @content;
   }
 }
 
 @mixin tablet{
-  @media only screen and (min-width: $screen-xs-mid){
+  @media only screen and (min-width: $screen-sm-min){
       @content;
   }
 }
 
+@mixin laptop{
+  @media only screen and (min-width: $screen-md-min){
+      @content;
+  }
+}
 
 @mixin desktop{
-  @media only screen and (min-width: $screen-xs-xl){
+  @media only screen and (min-width: $screen-lg-min){
       @content;
   }
 }
+

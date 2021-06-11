@@ -1,37 +1,63 @@
-//SCREEN SIZES FOR RESPONSIVE
-$screen-xs-min: 575px;
-$screen-sm-min: 576px;
-$screen-md-min: 768px;
-$screen-lg-min: 992px;
-$screen-xl: 1200px;
+//S C R E E N    F O R     R E S P O N S I V E
+
+// Mobile First - Biggert Than
+$screen-xs-min: 576px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+// Desktop First - Smaller than
+$scren-xs-max: 576px;
 $screen-sm-max: 767px;
 $screen-md-max: 991px;
 $screen-lg-max: 1199px;
 
-// COLORS
+// C O L O R S
+$background: #FAFAFA;
+
 $primary: linear-gradient(142.75deg, #ED5026 -2.2%, #F02748 50.89%, #F71694 107.64%);;
-$primary-light: #6E67D3;
-$primary-dark: #1B1841;
-$secondary: #C4D043;
-$secondary-bajo: #DCE775;
-$black: #000000;
+$marine-blue: #2D2D41;
+
+$marine-blue-900: #2D2D41;
+$marine-blue-800: #D5D5D9;
+$marine-blue-700: #C0C0C6;
+$marine-blue-600: #ABABB3;
+$marine-blue-500: #9696A0;
+
+$pink: #F71694;
+$purple: #C810FB;
+
 $white: #FFFFFF;
-$gray: #EAEAEC;
-$gray-dark: #9E9E9E;
-$gradiante-linear: linear-gradient(180deg, #241E6B 30.21%, #79186F 100%);
+
+//Text Colors:
+$txt-primary: #000000;
+$txt-secondary: #9E9E9E;
+
 
 // F O N T S 
 
-// Fonts weight:
+// Font Family
+$font-family: 'Montserrat', sans-serif;
+
+// F O N T S
+
+//Headers
+$font-size-h1: 48px;
+$font-size-h2: 36px;
+$font-size-h3: 24px;
+$font-size-h4: 18px;
+$font-size-h5: 18px;
+
+//Paragraphs
+$p-small: 12px;
+$p-regular: 14px;
+$p-large: 16px;
+
+$p-button: 14px; 
+
+//weight:
 $light: 300;
 $normal: 400;
 $semibold: 500;
 $bold: 700;
 
-// Font Sizes
-$body: 14px;
-$body2: 16px;
-
-// Fonts Colors:
-$txt-primary: #000000;
-$txt-secondary: #9E9E9E;

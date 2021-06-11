@@ -1,6 +1,10 @@
 import React from 'react';
+
+// Components
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+
+// Styles
 import './home.scss'
 
 const Home = () => {
@@ -9,13 +13,17 @@ const Home = () => {
         <>
             <Navbar />
             <div className="Hero">
-                <h1>Organizar tu fiesta nunca fue más fácil y divertido </h1>
-                <button>Contratar Servicios</button>
-                <img src="" alt="" />
+                <div className="hero-title">
+                    <h1>Organizar tu fiesta nunca fue más fácil y divertido </h1>
+                    <button>Contratar Servicios</button>
+                </div>
+                <div className="hero-image">
+                    <img src="" alt="" />
+                </div>
             </div>
 
             <main>
-                <section class="main-container">
+                <section className="main-container">
                     <div>
                         <p>
                             Party2Go es la plataforma mexicana para organizar tus fiestas, contratar servicios, entretenimiento, todo en un mismo lugar y con especialistas recomendados.
@@ -54,7 +62,7 @@ const Home = () => {
 
                 <section className="contact-container">
 
-                    <div class="contact-titles">
+                    <div className="contact-titles">
                         <h1>Contacto</h1>
                         <p>Haznos llegar tus dudas, ¡un asesor te atenderá a la brevedad!</p>
                     </div>

@@ -1,0 +1,49 @@
+<svg width="256" height="358" viewBox="0 0 256 358" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f)">
+<g filter="url(#filter1_f)">
+<circle r="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 23.3994 179)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 100.997 256.778)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 62.1982 140.111)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 139.796 217.889)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 100.997 101.222)" fill="#2D2D41"/>
+<circle r="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 178.595 179)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 139.796 62.3332)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 217.394 140.111)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 178.595 23.4445)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 256.192 101.222)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 62.1982 217.889)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 139.796 295.667)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 178.595 334.556)" fill="#2D2D41"/>
+<circle r="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 100.997 179)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 178.595 256.778)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 217.394 295.667)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 139.796 140.111)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 217.394 217.889)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 256.192 256.778)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 178.595 101.222)" fill="#2D2D41"/>
+<circle r="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 256.192 179)" fill="#2D2D41"/>
+<ellipse rx="13.7334" ry="13.7334" transform="matrix(0.706287 -0.707926 0.706287 0.707926 217.394 62.3333)" fill="#2D2D41"/>
+</g>
+<g filter="url(#filter2_f)">
+<rect width="151.464" height="15.1464" transform="matrix(0.707038 -0.707176 0.707038 0.707176 213.364 174.725)" fill="#9696A0"/>
+<rect width="151.464" height="15.1464" transform="matrix(0.707038 -0.707176 0.707038 0.707176 234.782 196.147)" fill="#9696A0"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f" x="0" y="0" width="378" height="358" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur"/>
+</filter>
+<filter id="filter1_f" x="0" y="0" width="357.189" height="358" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur"/>
+</filter>
+<filter id="filter2_f" x="209.364" y="63.613" width="168.636" height="168.667" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur"/>
+</filter>
+</defs>
+</svg>

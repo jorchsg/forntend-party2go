@@ -1,8 +1,13 @@
+@import './styles/variables.scss';
+@import './styles/mixins.scss';
+
 body {
     margin: 0;
-    font-family: var(--default-font-family);
+    font-family: $font-family;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+    background-color: $background; 
 }
 
 h1,
@@ -10,6 +15,22 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: var(--default-font-family);
+  font-family: $font-family;
+}
+
+h1{ font-size: $font-size-h1; font-weight: $bold; }
+
+h2{ font-size: $font-size-h2; font-weight: $bold;}
+
+h3{ font-size: $font-size-h3; font-weight: $bold;}
+
+h4{ font-size: $font-size-h4; font-weight: $bold;}
+
+h5{ font-size: $font-size-h5; font-weight: $semibold;}
+
+
+img{
+  max-width: 100%;
+  height: auto;
 }
 
