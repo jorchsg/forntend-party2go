@@ -7,8 +7,8 @@ import './index.scss';
 function App() {
   return (
     <Switch>
-      <Route path="/" component={Home}></Route>
-      <Route path="/login" component={Login} />
+      <Route path="/" exact component={Home}></Route>
+      <Route path="/login" exact component={Login} />
     </Switch>
   );
 }

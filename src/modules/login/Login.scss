@@ -1,56 +1,87 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+.page{
+    * {
+        font-family: $font-family;
+    }
+    background: $primary;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.logo-white{
+    display: none;
+}
 .login-image__container{
     display: none;
     img{
         height: inherit;
     }
 }
-.form{
-    * {
-        font-family: var(--default-font-family);
-    }
-    background: var(--default-primary-color);
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    align-items: flex-end;
-    justify-content: center;
-    &__subcontainer{
-        background: var(--default-secondary-background-color);
-        height: 433px;
+.login{
+    display: flex;
+    flex-direction: column;
+    &-container{
+        background: $background-secondary;
+        height: calc(433px - 36px);
         width: calc(318px - 48px);
         border-radius: 8px;
         padding: 18px 24px;
+        .image-wrapper{
+            width: 100%;
+            display: grid;
+            align-items: center;
+            justify-content: center; 
+        }
+
         form{
             display: flex;
             flex-direction: column;
             input{
                 max-width:270px;
                 padding: 10px 16px;
-                border-radius: 4px;
-                border: none;
-                color: var(--default-primary-font-color);
+                border-radius: 5px;
+                border: 2px solid white;
+                color: $txt-primary;
                 font-weight: 500;
                 &:focus{
-                    // border: none;
-                    border: 1px solid red;
+                    border-radius: 5px;
+                    border: 2px solid $marine-blue-500;
+                    outline: none;
                 }
                 &::placeholder{
                     font-weight: 500;
-                    font-size: 14px;
+                    font-size: $p-regular;
                     line-height: 22px;
-                    font-family: var(--default-font-family);
-                    color: var(--default-secondary-font-color);
+                    font-family: $font-family;
+                    color: $txt-secondary;
                 }
             }
             label{
                 font-style: normal;
                 font-weight: 500;
-                font-size: 18px;
+                font-size: $font-size-h5;
                 line-height: 22px;
+                padding:0 0 4px 0;
+            }
+            label[for=password]{
                 padding:16px 0 4px 0;
+
             }
         }
         
+    }
+    &-register{
+        margin: 20px;
+        color: $white;
+        a{
+            color: $white;
+            font-weight: $semibold-x;
+            text-decoration: none;
+
+        }
     }
 }
 
@@ -66,10 +97,10 @@
     .forgot-password{
         text-align: end;
         padding: 8px 0 0 0;
-        color: var(--default-secondary-font-color);
+        color: $txt-secondary;
     }
     .error,.forgot-password{
-        font-size: 12px;
+        font-size: $p-regular;
         line-height: 16px;
     }
 }
@@ -77,18 +108,84 @@
     display: grid;
     justify-content: center;
     width: 100%;
-    padding-top: 18px;
+    button{
+        cursor: pointer;
+    }
 }
 .login-button{
     border: none;
-    background: var(--default-primary-color);
-    color: white;
+    background: $primary;
+    color: $white;
     border-radius: 10px;
     padding: 10px 24px;
     font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: $p-large;
     height: 40px;
     width: 270px;
+    &__google{
+        border: none;
+        color: $txt-primary;
+        border-radius: 10px;
+        padding: 10px 24px;
+        font-weight: 600;
+        font-size: $p-large;
+        height: 40px;
+        width: 270px;
+        background: $white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center; 
+    }
+}
+.p-s{
+    padding: 15px 0;
+}
+.p-b{
+    padding-bottom: 28px;
+}
+@include laptop{
+    .page{
+        display: flex;
+        flex-direction: row;
+        background: $white;
+        justify-content: space-between;
+    }
+    .login-image__container{
+        display: block;
+        min-width: 652px;
+        max-width: 50%;
+        height: 100%;
+        img{
+            width: 100%;
+        }
+    }
+    .login{
+        width: 50%;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        &-register{
+            color: $txt-primary;
+            a{
+                color: $txt-primary;    
+            }
+        }
+    }
+    .logo-white{
+        display: block;
+        position: fixed;
+        width: 140px;
+        top: 20px;
+        left: 20px;
+        z-index: 3;
+    }
+}
 
+@include desktop{
+    .login-image__container{ 
+        min-width: 792px;  
+        img{
+            width: 100%;
+        }
+    }
 }
