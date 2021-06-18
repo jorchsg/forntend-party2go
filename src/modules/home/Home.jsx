@@ -4,6 +4,13 @@ import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 
+// Icons
+import heroImage from '../../../src/assets/hero-party.svg'
+import iconSalon from '../../../src/assets/icon-services-salones.svg'
+import iconSilla from '../../../src/assets/icon-services-sillas.svg'
+import iconMesa from '../../../src/assets/icon-services-mesas.svg'
+import iconSonido from '../../../src/assets/icon-services-sound.svg'
+
 // Styles
 import './home.scss'
 
@@ -11,77 +18,98 @@ const Home = () => {
 
     return (
         <>
-            <Navbar />
-            <div className="Hero">
-                <div className="hero-title">
-                    <h1>Organizar tu fiesta nunca fue más fácil y divertido </h1>
-                    <button>Contratar Servicios</button>
-                </div>
-                <div className="hero-image">
-                    <img src="" alt="" />
-                </div>
-            </div>
+            {/* <Navbar /> */}
 
-            <main>
-                <section className="main-container">
-                    <div>
+            <div className="container">
+
+                <div className="hero">
+                    <div className="hero-title">
+                        <div className="title">
+                            <h1>Organizar tu fiesta nunca fue más fácil y divertido </h1>
+                        </div>
+                        <div className="btn-container">
+                            <button>Contratar Servicios</button>
+                        </div>
+                    </div>
+                    <div className="hero-img">
+                        <img src={heroImage} alt="Hero Party" />
+                    </div>
+                </div>
+
+                <main>
+                    <section className="about">
                         <p>
                             Party2Go es la plataforma mexicana para organizar tus fiestas, contratar servicios, entretenimiento, todo en un mismo lugar y con especialistas recomendados.
                         </p>
-                    </div>
+                    </section >
 
-                    <div>
-
-                    </div>
-
-                </section >
-
-                <section className="services">
-                    <div className="services-title">
-                        <h1>Nuestros Servicios</h1>
-                    </div>
-                    <div className="services-items">
-                        <div className="service-card">
-                            <p>Salones</p>
-                            <img src="" alt="Sillas" />
+                    <section className="services">
+                        <div className="services-title">
+                            <h1>Nuestros Servicios</h1>
                         </div>
-                        <div className="service-card">
-                            <p>Sillas</p>
-                            <img src="" alt="Sillas" />
+
+                        <div className="services-items">
+
+                            <div className="service-card">
+                                <img src={iconSalon} alt="Salon" />
+                                <h4>Salones</h4>
+                            </div>
+                            <div className="service-card">
+                                <img src={iconSilla} alt="Sillas" />
+                                <h4>Sillas</h4>
+                            </div>
+                            <div className="service-card">
+                                <img src={iconMesa} alt="Mesas" />
+                                <h4>Mesas</h4>
+                            </div>
+                            <div className="service-card">
+                                <img src={iconSonido} alt="Sonido" />
+                                <h4>Sonido/Dj</h4>
+                            </div>
                         </div>
-                        <div className="service-card">
-                            <p>Mesas</p>
-                            <img src="" alt="Sillas" />
+                    </section>
+
+                    <section className="info-hero">
+                        <div className="content-hero">
+
+                            <div className="hero-title">
+                                <h1>Empieza Aqui</h1>
+                            </div>
+                            <div className="hero-text">
+                                <p>Party2Go es la plataforma mexicana para organizar tus fiestas, contratar servicios, entretenimiento, todo en un mismo lugar y con especialistas recomendados.</p>
+                            </div>
+                            <div className="button-services">
+                                <button>Contratar Servicios</button>
+                            </div>
                         </div>
-                        <div className="service-card">
-                            <p>Sonido/Dj</p>
-                            <img src="" alt="Sillas" />
+
+                    </section>
+
+                    <section className="contact-container">
+
+                        <div className="contact-titles">
+                            <h1>Contacto</h1>
+                            <p>Haznos llegar tus dudas, ¡un asesor te atenderá a la brevedad!</p>
                         </div>
-                    </div>
-                </section>
 
-                <section className="contact-container">
-
-                    <div className="contact-titles">
-                        <h1>Contacto</h1>
-                        <p>Haznos llegar tus dudas, ¡un asesor te atenderá a la brevedad!</p>
-                    </div>
-
-                    <div className="form-conmtact">
-                        <div className="form-contact">
-                            <input type="text" placeholder="Escribe tu correo electrónico" />
-                            <button
-                                className="btn-send"
-                            >Enviar
-                            </button>
+                        <div className="form-conmtact">
+                            <div className="form-contact">
+                                <input type="text" placeholder="Escribe tu correo electrónico" />
+                                <button
+                                    className="btn-send"
+                                >Enviar
+                                </button>
+                            </div>
                         </div>
-                    </div>
 
-                </section>
+                    </section>
 
-            </main>
+                </main>
 
-            <Footer />
+
+            </div>
+
+            {/* <Footer /> */}
         </>
     )
 }

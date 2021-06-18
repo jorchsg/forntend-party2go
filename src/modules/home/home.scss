@@ -1,3 +1,102 @@
-body{
-   
+// Importing Variables
+@import '../../styles/variables.scss';
+
+.container{
+    // Don't allow to use all Screen
+    // max-width: 1400px;
+    // Center Content
+    // margin: 80px;
 }
+
+.hero{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 24px;
+    align-items: center;
+    
+    .title{
+        margin-bottom: 32px;
+    }
+
+    button {
+        background-color: transparent;
+        border-style: solid;
+        border-color: $primary-normal;
+        color: $primary-normal;
+        text-align: center;
+        padding: 16px;
+        font-weight: $bold;
+        font-size: $p-button;
+        padding: 14px 24px;
+        border-radius: 4px;
+        width: 207px;
+        height: 48px;
+        cursor: pointer;
+
+        &:hover{
+            background: $primary;
+            color: $white;
+        }
+    }
+}
+
+.about{
+    margin: 168px 0;
+    display: grid;
+    grid-template-columns: 812px;
+    justify-content: center;
+}
+
+.services{
+    display: grid;
+    grid-template-columns: repeat(1 1fr);
+    grid-template-rows: repeat(2 1fr);
+    justify-content: center;
+    margin-bottom: 108px;
+
+    h1{
+        text-align:center;
+    }
+
+    .services-items{
+        margin-top: 54px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 24px;
+    }
+
+     .service-card{
+        background-color: $white;
+        width: 204px;
+        height: 112px;
+        border-radius: 4px;
+        padding: 14px 0px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+.info-hero{
+    min-height: 24rem;
+    background-size: cover;
+    background-color:$pink;
+    color: $white;
+    background-image: url("../../assets/empieza-aqui.png");
+    background-position: center center; 
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    .content-hero{
+        display: grid;
+        grid-template-columns: 3;
+
+        .hero-title{
+
+        }
+    }
+}
+

@@ -1,0 +1,63 @@
+@import '../../styles/variables.scss';
+
+.footer-party{
+    background: $primary;
+    margin-top: 64px;
+    color: $white;
+
+    ul{
+        list-style: none;
+    }
+
+    .footer-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 48px;
+
+        .social-networks{
+            grid-template-rows: repeat(3, 1fr);
+
+            .social-title{
+                grid-row: 1 / 2;
+            }
+
+            .social{
+                grid-row: 2 / 3 ;
+                
+            }
+
+            .icons-social-networks{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                justify-content: left;
+            }
+            
+            
+        }
+
+
+        .footer-sections{
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+        
+
+        .footer-apps{
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+}
+
+.rights{
+    background: $primary;
+    p{
+        margin: 0;
+        color: $white;
+        text-align: center;
+        padding: 8px;
+    }
+}
