@@ -1,102 +1,234 @@
 // Importing Variables
 @import '../../styles/variables.scss';
 
-.container{
-    // Don't allow to use all Screen
-    // max-width: 1400px;
-    // Center Content
-    // margin: 80px;
+img{
+    max-width: 100%;
 }
 
+// Container For All Page
+.container{
+    // Don't allow to use all Screen
+    max-width: 1400px;
+    // Create an auto margin
+    width: 90%;
+    // Center Content
+    margin: 0 auto;
+}
+
+// Hero
 .hero{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     grid-gap: 24px;
     align-items: center;
-    
-    .title{
-        margin-bottom: 32px;
-    }
+    margin-top: 48px;
+    margin-bottom: 48px;
 
-    button {
-        background-color: transparent;
-        border-style: solid;
-        border-color: $primary-normal;
-        color: $primary-normal;
-        text-align: center;
-        padding: 16px;
-        font-weight: $bold;
-        font-size: $p-button;
-        padding: 14px 24px;
-        border-radius: 4px;
-        width: 207px;
-        height: 48px;
-        cursor: pointer;
+    .content{
 
-        &:hover{
-            background: $primary;
-            color: $white;
+        display: grid;
+
+        .title{
+            margin-bottom: 32px;
+        
+            h1{
+                font-size: 24px;
+            }
+        }
+
+        .btn-container{
+            display: flex;
+            justify-content: center;
+        }
+
+
+        button {
+            background-color: transparent;
+            border-style: solid;
+            border-color: $primary-normal;
+            color: $primary-normal;
+            text-align: center;
+            padding: 16px;
+            font-weight: $bold;
+            font-size: $p-button;
+            padding: 14px 24px;
+            border-radius: 4px;
+            width: 207px;
+            height: 48px;
+            cursor: pointer;
+
+            &:hover{
+                background: $primary;
+                color: $white;
+            }
+        }
+
+        .hero-img{
+            margin-top: 48px;
+        }
+
+        @media (min-width: 768PX) {
+
+            margin-top: 80px;
+            margin-bottom: 80px;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            .title{
+                h1{
+                    text-align: left;
+                    font-size: 48px;
+                }
+            }
+
+            .btn-container{
+                display: flex;
+                justify-content: start;
+            }
+
+            .hero-img{
+                margin-top: 0px;
+            }
+
+           
         }
     }
+}
+
+
+.about{
+    display: grid;
+    font-size: $p-small;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 54px;
 }
 
 .about{
-    margin: 168px 0;
-    display: grid;
-    grid-template-columns: 812px;
-    justify-content: center;
+    @media (min-width: 768px){
+        width: 50%;
+        font-size: $p-large;
+        margin-bottom: 80px;
+    }
 }
 
-.services{
-    display: grid;
-    grid-template-columns: repeat(1 1fr);
-    grid-template-rows: repeat(2 1fr);
-    justify-content: center;
-    margin-bottom: 108px;
-
-    h1{
-        text-align:center;
-    }
-
-    .services-items{
-        margin-top: 54px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 24px;
-    }
-
-     .service-card{
-        background-color: $white;
-        width: 204px;
-        height: 112px;
-        border-radius: 4px;
-        padding: 14px 0px;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
+.description{
+    text-align: center;
 }
+
+
+.container-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    justify-items: center;
+}
+
+.card{
+    background-color: $white;
+    border-radius: 4px;
+    padding: 14px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+// Info Hero
 
 .info-hero{
-    min-height: 24rem;
-    background-size: cover;
-    background-color:$pink;
-    color: $white;
+    margin-top: 108px;
+    height: 100%;
     background-image: url("../../assets/empieza-aqui.png");
-    background-position: center center; 
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    opacity: 0.8;
+    -webkit-box-shadow: 0px 6px 32px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 6px 32px -10px rgba(0,0,0,0.75);
+    box-shadow: 0px 6px 32px -10px rgba(0,0,0,0.75);
+    transition: all .3s ease;
+    
 
     .content-hero{
+        color: $white;
         display: grid;
-        grid-template-columns: 3;
+        grid-template-rows: repeat(3, 1fr);
+        padding: 24px;
+    }
 
-        .hero-title{
+    .hero-title{
+        text-align: center;
+    }
 
+    .hero-text{
+        text-align: center;
+    }
+
+    .button-services{
+        button{
+            background-color: transparent;
+            border-style: solid;
+            border-color: $white;
+            color: $white;
+            text-align: center;
+            padding: 16px;
+            font-weight: $bold;
+            font-size: $p-button;
+            padding: 14px 24px;
+            border-radius: 4px;
+            width: 207px;
+            height: 48px;
+            cursor: pointer;
+
+            &:hover{
+                background: $primary;
+                color: $white;
+            }
         }
+    }
+}
+
+
+
+
+
+
+.contact{
+    padding: 24px;
+    text-align: center;
+
+    @media (min-width: 768px){
+        padding: 48px;
+    }
+
+    input {
+        padding: 10px 16px;
+        height: 24px;
+        width: 546px;
+        border-radius: 4px;
+        font-size: 12px;
+        line-height: 22px;
+        font-weight: 500;
+        color: $marine-blue-500;
+        border-style: solid;
+        margin-right: 15px;
+    }
+
+    button{
+        padding: 14px 24px;
+        background: linear-gradient(142.75deg, #ED5026 -2.2%, #F02748 50.89%, #F71694 107.64%);
+        color: $white;
+        cursor: pointer;
+        border-radius: 4px;
+        height: 100%;
+        border-style: solid;
+        border-color: $primary-normal;
+        text-align: center;
+        font-weight: $bold;
+        font-size: $p-button;
     }
 }
 

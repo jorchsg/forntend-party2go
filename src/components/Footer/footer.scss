@@ -1,12 +1,24 @@
 @import '../../styles/variables.scss';
 
+.container{
+    // Don't allow to use all Screen
+    max-width: 1400px;
+    // Create an auto margin
+    width: 90%;
+    // Center Content
+    margin: 0 auto;
+}
+
+
 .footer-party{
+    padding-top: 24px;
     background: $primary;
     margin-top: 64px;
     color: $white;
 
     ul{
         list-style: none;
+        padding: 0; 
     }
 
     .footer-container{
@@ -50,7 +62,43 @@
         }
     }
 
+    .footer-sections{
+
+        h4{
+            text-align: center;
+        }
+
+        .service-list{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 8px;
+            justify-items: center;
+
+            li{
+                &:hover{
+                    cursor: pointer;
+                    color:yellow;
+                }
+            }
+        }
+
+        
+    }
+
+
+
+    .icons-social-networks{
+        margin-top: 14px;
+    }
+
+    .apps{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
+
+
 
 .rights{
     background: $primary;
@@ -58,6 +106,6 @@
         margin: 0;
         color: $white;
         text-align: center;
-        padding: 8px;
+        padding: 24px;
     }
 }
