@@ -1,0 +1,71 @@
+@import "../../styles/variables.scss";
+.body404 {
+    display: flex;
+    align-content: center;
+    height: 100%;
+    margin-top: 5%;
+    font-family: Montserrat;
+    margin: 5%;
+
+    @media only screen and (max-width: 600px) {
+        justify-content: center;
+        //width: calc(100% - 5%);
+        flex-direction: column-reverse;
+
+
+        .image404{
+            width: 100%;
+            align-content: center;
+            
+
+        }
+        .message404{
+            width: 100%;
+            text-align: center;
+
+            h1{
+                
+                align-content: center;
+                font-size: 18pt;
+            }
+            p{
+                font-size: 8pt;
+
+            }
+            h4{
+                font-size: 10pt;
+            }
+
+        }
+        
+
+      }
+}
+
+.message404 {
+    width: 50%;
+    height: 50%;
+    text-align: left;
+    align-content: center;
+    margin-top: 10%;
+    color: #2d2d41;
+    
+    h1 {
+        
+        font-weight: $bold;
+        
+    }
+    
+    h4 {
+        a {
+            color: #2d2d41;
+        }
+    }
+}
+
+.image404 {
+    width: 50%;
+    height: 50%;
+    align-content: center;
+    
+}
