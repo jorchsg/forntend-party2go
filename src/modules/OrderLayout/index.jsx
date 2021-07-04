@@ -161,14 +161,17 @@ export default function CustomizedSteppers() {
   const steps = ['Salones', 'Mesas', 'Sillas', 'Sonido', 'Pago'];
 
   return (
-    <div className='steps'>
-      <Stepper className='steps-wrapper' alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />}>
+    <div className='steps-layout'>
+      <Stepper className='steps-layout-wrapper' alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />}>
         {steps.map((label) => (
           <Step key={label}>
             <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
           </Step>
         ))}
       </Stepper>
+      <div className='step-content'>
+        {getStepContent(activeStep)}
+      </div>
     </div>
   );
 }

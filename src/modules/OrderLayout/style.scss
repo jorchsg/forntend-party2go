@@ -1,7 +1,10 @@
 @import '../../styles//variables.scss';
-.steps{
+.steps-layout{
     width: 100%;
     &-wrapper{
         background: transparent !important;
     }
+}
+.steps-content{
+    width: 100%;
 }

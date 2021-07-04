@@ -1,0 +1,41 @@
+@import '../../styles/variables.scss';
+.quantity{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-auto-flow: column;
+    height: 44px;
+    margin: 1rem 0;
+    *{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin: 0;
+        border: none;
+        text-align: center;
+    }
+    input{
+        background: $white;
+        color:$marine-blue-500;
+        height: auto;
+        &:focus{
+            background: $primary;
+            color: $white;
+            outline: none;
+        }
+
+    }
+    button{
+        background: $marine-blue-700;
+        img{
+            width: 24px;
+        }
+    }
+    //For disable arrows in input
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
