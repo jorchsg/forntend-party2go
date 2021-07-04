@@ -18,7 +18,7 @@ const Home = () => {
 
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
 
             <div className="hero">
                 <div className="container">
@@ -107,7 +107,7 @@ const Home = () => {
 
             </main>
 
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }
