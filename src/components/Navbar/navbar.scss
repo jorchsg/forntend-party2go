@@ -7,6 +7,9 @@
     grid-template-columns: repeat(3, 20% 40% 40%);
     align-items: center;
     border: $marine-blue-900 solid 1px;
+    -webkit-box-shadow: 0px 6px 32px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 6px 32px -10px rgba(0,0,0,0.75);
+    box-shadow: 0px 6px 32px -10px rgba(0,0,0,0.75);
 
     a{
         text-decoration: none;
@@ -31,6 +34,9 @@
         
         input{
             padding: 12px 16px;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 16px rgba(45, 45, 65, 0.3);
+            border-radius: 4px;
         }
 
         .btn-main{
@@ -42,10 +48,17 @@
             font-size: $p-button;
             border: none;
             font-weight: $bold;
+            cursor: pointer;
         }   
 
-        button .secondary{
-
+        .btn-secondary{
+            background: none;
+            color: $white;
+            width: 80px;
+            font-size: $p-button;
+            border: none;
+            font-weight: $bold;
+            cursor: pointer;
         }
     }
 }

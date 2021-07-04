@@ -8,6 +8,7 @@ import Facebook from '../../assets/icon-facebook-white.svg'
 import Instagram from '../../assets/icon-instagram-white.svg'
 import AppStore from '../../assets/icon-app-store.svg'
 import GooglePlay from '../../assets/icon-google-play-white.svg'
+import LogoParty2Go from '../../assets/logo-party2go-white.svg'
 
 
 const Footer = () => {
@@ -15,17 +16,17 @@ const Footer = () => {
         <>
             <div className="footer-party">
 
-                <div className="footer-container">
+                <div className="footer-container container">
 
                     <div className="social-networks">
 
                         <div className="social-title">
-                            <h2>Party To Go</h2>
+                            <img src={LogoParty2Go} alt="logo" />
                             <p>Los mejores especialistas para tus fiestas en un solo lugar.</p>
                         </div>
 
                         <div className="social">
-                            <h5>Siguenos en Nuestras Redes Sociales</h5>
+                            <h5>Siguenos en Nuestras Redes Sociales: </h5>
                             <div className="icons-social-networks">
                                 <img className="item-1" src={Twitter} alt="icon twitter" />
                                 <img className="item-2" src={Youtube} alt="icon-youtube" />
@@ -36,8 +37,8 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-sections">
-                        <h2>Secciones</h2>
-                        <ul>
+                        <h4>Secciones</h4>
+                        <ul className="service-list">
                             <li>Servicios</li>
                             <li>Empieza Aquí</li>
                             <li>Conctacto</li>
@@ -45,12 +46,15 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-apps">
-                        <button className="btn-language">
-                            Idioma: Español
-                        </button>
-                        <h4>Descarga la app de Party2Go</h4>
-                        <img src={AppStore} alt="app sotre" />
-                        <img src={GooglePlay} alt="Google play" />
+                        <h4>DESCARGA LA APP DE PART2GO</h4>
+                        <div class="apps">
+                            <div className="appStore">
+                                <img src={AppStore} alt="app sotre" />
+                            </div>
+                            <div className="google-play">
+                                <img src={GooglePlay} alt="Google play" />
+                            </div>
+                        </div>
                     </div>
                 </div>
 
