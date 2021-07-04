@@ -100,13 +100,13 @@ const useColorlibStepIconStyles = makeStyles({
   },
   active: {
     backgroundImage:
-      'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
-    boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
+      'linear-gradient(142.75deg, #ED5026 -2.2%, #F02748 50.89%, #F71694 107.64%)',
+    // boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
     border:'none'
   },
   completed: {
     backgroundImage:
-      'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
+      'linear-gradient(142.75deg, #ED5026 -2.2%, #F02748 50.89%, #F71694 107.64%)',
       border:'none'
   },
 });
@@ -162,6 +162,7 @@ export default function CustomizedSteppers() {
 
   return (
     <div className='steps-layout'>
+      <h2 className='title steps-layout-wrapper'>Proceso de orden</h2>
       <Stepper className='steps-layout-wrapper' alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />}>
         {steps.map((label) => (
           <Step key={label}>
@@ -169,7 +170,7 @@ export default function CustomizedSteppers() {
           </Step>
         ))}
       </Stepper>
-      <div className='step-content'>
+      <div className='steps-content'>
         {getStepContent(activeStep)}
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import QuantityForm from '../../components/QuantityForm/QuantityForm';
+import Button from '../../components/Button/Button';
 import iconNoResults from '../../assets/icon-no-results.png';
 import './Salon.scss';
 
@@ -18,7 +19,7 @@ const Salon =()=>{
                     setQuantity={setPeople} 
                     quantity={people}
                 />
-                <button>Buscar disponibilidad</button>
+                <Button minWidth='100%' type='solid'>Buscar disponibilidad</Button>
             </div>
             <div className='salones-results'>
                 <div className='no-results'>

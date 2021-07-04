@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+.button-component{
+    border: none;
+    border-radius: 10px;
+    padding: 10px 24px;
+    font-weight: 600;
+    font-size: $p-large;
+    max-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-family;
+
+    &--solid{
+        background: $primary;
+        color: $white;
+        &:disabled{
+            background: $marine-blue-800;
+            color: $marine-blue-500;
+        }
+    }
+    &--outline{
+        color: $marine-blue;
+        background: transparent;
+        border: 1px solid $marine-blue;
+    }
+    &--blank{
+        color: $marine-blue;
+        background: $white;
+    }
+}
