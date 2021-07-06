@@ -1,0 +1,60 @@
+import React from "react";
+
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+
+import Typography from "@material-ui/core/Typography";
+
+import "./style.scss";
+
+const CardComponent = (props) => {
+  return (
+    <>
+      
+        <Card className={(props.isSelected)?'card active':'card'} onClick={props.onClick} >
+          <CardActionArea>
+            <img
+              className="imgService"
+              src={props.image}
+              alt="Img service"
+            />
+            <CardContent>
+              <div className="nameAndPrice">
+                <h5 className="name">
+                  {props.nameService == null || "" ? (
+                    <h5>Undefined</h5>
+                  ) : (
+                    props.nameService
+                  )}
+                </h5>
+                <h4 className="price">
+                  ${" "}
+                  {props.price == null || "" ? (
+                    <h4>Undefined</h4>
+                  ) : (
+                    props.price
+                  )}
+                  /h
+                </h4>
+              </div>
+              <div className="descripcion-content">
+                <p className="descripcion">
+                  {props.description == null || "" ? (
+                    <p>Undefined</p>
+                  ) : (
+                    props.description
+                  )}
+                </p>
+              </div>
+              {props.children}
+            </CardContent>
+          </CardActionArea>
+        </Card>
+      
+    </>
+  );
+};
+export default CardComponent;
