@@ -2,6 +2,7 @@ import React from 'react';
 import QuantityForm from '../../components/QuantityForm/QuantityForm';
 import Button from '../../components/Button/Button';
 import iconNoResults from '../../assets/icon-no-results.png';
+import TextField from '@material-ui/core/TextField';
 import './Salon.scss';
 
 const Salon =()=>{
@@ -11,8 +12,23 @@ const Salon =()=>{
         <div className='salones'>
             <div className='salones-selector'>
                 <h3><strong>Elige la fecha y hora</strong></h3>
-                <div> date picker  </div>
-                <div> hour picker </div>
+                <TextField
+                    className='date-selector'
+                    type="date"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                />
+                <TextField
+                    className='hour-selector'
+                    type="time"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    inputProps={{
+                        step: 300, // 5 min
+                    }}
+                />
                 <QuantityForm 
                     title='Cantidad de personas'
                     minQuantity={1}
