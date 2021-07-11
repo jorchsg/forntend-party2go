@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+.order-content{
+    display: grid;
+    grid-template-columns: 25% auto;
+    column-gap: 24px;
+    
+    &-results , &-selector{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $background-secondary;
+        border-radius: 8px;
+    }
+
+    &-selector{
+        padding: 32px 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: start;
+    }
+}
