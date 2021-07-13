@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Components
-
+import Footer from '../../components/Footer/Footer'
 // Icons
 import heroImage from '../../../src/assets/hero-party.svg'
 import iconSalon from '../../../src/assets/icon-services-salones.svg'
@@ -105,7 +105,7 @@ const Home = () => {
 
             </main>
 
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }
