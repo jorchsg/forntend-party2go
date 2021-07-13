@@ -9,6 +9,7 @@ import Check from '@material-ui/icons/Check';
 import StepConnector from '@material-ui/core/StepConnector';
 import Salon from '../Salon/Salon';
 import './style.scss';
+import Mesas from '../Mesas/Mesas';
 
 const useQontoStepIconStyles = makeStyles({
   root: {
@@ -65,8 +66,8 @@ const ColorlibConnector = withStyles({
   },
   active: {
     '& $line': {
-      backgroundImage:
-        'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
+      background:
+        '#F02748',
     },
   },
   completed: {
@@ -146,7 +147,7 @@ function getStepContent(step) {
     case 0:
       return Salon();
     case 1:
-      return 'What is an ad group anyways?';
+      return Mesas();
     case 2:
       return 'This is the bit I really care about!';
     default:
@@ -155,7 +156,7 @@ function getStepContent(step) {
 }
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(1);
   const steps = ['Salones', 'Mesas', 'Sillas', 'Sonido', 'Pago'];
 
   return (

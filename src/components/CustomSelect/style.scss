@@ -1,0 +1,12 @@
+@import '../../styles/variables.scss';
+.custom-select{
+    width: calc(100% - 10px);
+    height: auto;
+    margin: 10px auto;
+    &.Mui-focused{
+        border-color: red;
+    }
+    svg{
+        color: $pink;
+    }
+}
