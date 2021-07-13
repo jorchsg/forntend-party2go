@@ -2,11 +2,11 @@
 .custom-select{
     width: calc(100% - 10px);
     height: auto;
-    margin: 10px auto;
-    &.Mui-focused{
-        border-color: red;
-    }
+    margin: .5rem 0;
     svg{
         color: $pink;
+    }
+    &.MuiInput-underline::after{
+        border-color: $primary-normal;
     }
 }

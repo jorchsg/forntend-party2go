@@ -8,6 +8,7 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Check from '@material-ui/icons/Check';
 import StepConnector from '@material-ui/core/StepConnector';
 import Salon from '../Salon/Salon';
+import Sillas from '../Sillas/Sillas'
 import './style.scss';
 import Mesas from '../Mesas/Mesas';
 
@@ -66,14 +67,12 @@ const ColorlibConnector = withStyles({
   },
   active: {
     '& $line': {
-      background:
-        '#F02748',
+      background:'#F02748',
     },
   },
   completed: {
     '& $line': {
-      backgroundImage:
-        'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
+      background:'#F02748',
     },
   },
   line: {
@@ -149,14 +148,14 @@ function getStepContent(step) {
     case 1:
       return Mesas();
     case 2:
-      return 'This is the bit I really care about!';
+      return Sillas();
     default:
       return 'Unknown step';
   }
 }
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(1);
+  const [activeStep, setActiveStep] = React.useState(2);
   const steps = ['Salones', 'Mesas', 'Sillas', 'Sonido', 'Pago'];
 
   return (
