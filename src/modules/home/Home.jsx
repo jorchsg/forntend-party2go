@@ -1,8 +1,6 @@
 import React from 'react';
 
 // Components
-import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/Footer/Footer';
 
 // Icons
 import heroImage from '../../../src/assets/hero-party.svg'
