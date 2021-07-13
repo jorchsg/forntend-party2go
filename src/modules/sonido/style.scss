@@ -1,0 +1,78 @@
+
+.list-container{
+
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.sonido-grid{
+    width: fit-content;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+}
+.buttons-container{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    margin-top: 2%;
+    justify-content: center;
+    
+    .button-omitir{
+        width: 12%;
+        height: 50px;
+        border:solid 3px ;
+        border-radius: 10px;
+        margin-left: 24%;
+        
+        transition-duration: 0.4s;
+        
+        font-family: Montserrat;
+        font-size: 14pt;
+
+
+        
+        
+    }
+    .button-omitir:hover{
+        background:linear-gradient(142.75deg, #ED5026 -2.2%, #F02748 50.89%, #F71694 107.64%);
+
+        color: white;
+        cursor: pointer;
+        
+        
+    }
+    
+    .button-continue{
+        width: 12%;
+        height: 50px;
+        border-radius: 10px;
+        margin-left: 1%;
+        background: #D5D5D9;
+        font-family: Montserrat;
+        font-size: 14pt;
+        color:#9696A0;
+        border: none;
+
+
+        &.selected{
+            background:linear-gradient(142.75deg, #ED5026 -2.2%, #F02748 50.89%, #F71694 107.64%);
+            color: white;
+            cursor: pointer;
+            transition-duration: 0.4s;
+
+            
+
+        }
+        
+        
+
+    }
+    
+
+    
+    
+}
