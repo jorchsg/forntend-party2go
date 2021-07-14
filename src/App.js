@@ -5,7 +5,8 @@ import OrderLayout from '../src/modules/OrderLayout';
 import { Switch, Route, } from "react-router-dom";
 import DefaultLayout from './modules/DefaultLayout';
 import Page404 from './modules/Page404/index';
-import Sonido from './modules/sonido/index'
+import Sonido from './modules/sonido/index';
+import Pago from './modules/pago/index';
 import './index.scss';
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
         <Route path="/404" exact component={Page404}></Route>
      
         <Route path="/sonido" exact component={Sonido}></Route>
-        
+        <Route path="/pago" exact component={Pago}></Route>
 
       </DefaultLayout>
     </Switch>

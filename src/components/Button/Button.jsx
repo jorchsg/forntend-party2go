@@ -21,7 +21,8 @@ const Button = (props)=>{
                 ...props.style
             }}
             onClick={props.onClick} 
-            className={`button-component button-component--${props.type}`} 
+            className={`${props.className} button-component button-component--${props.type}`}
+            id={props.id} 
             disable={props.disable}>
             {props.text || props.children}
         </button>

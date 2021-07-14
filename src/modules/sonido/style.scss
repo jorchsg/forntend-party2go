@@ -18,10 +18,11 @@
     position: absolute;
     display: flex;
     width: 100%;
-    margin-top: 2%;
+    margin: 2%;
     justify-content: center;
+    margin-bottom: 100px;
     
-    .button-omitir{
+    .button-component--omitir{
         width: 12%;
         height: 50px;
         border:solid 3px ;
@@ -32,21 +33,23 @@
         
         font-family: Montserrat;
         font-size: 14pt;
+        
 
 
         
         
     }
-    .button-omitir:hover{
+    .button-component--omitir:hover{
         background:linear-gradient(142.75deg, #ED5026 -2.2%, #F02748 50.89%, #F71694 107.64%);
 
         color: white;
         cursor: pointer;
+        border: none;
         
         
     }
     
-    .button-continue{
+    .button-component--continue{
         width: 12%;
         height: 50px;
         border-radius: 10px;

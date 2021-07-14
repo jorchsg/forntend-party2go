@@ -1,7 +1,9 @@
 import React from 'react';
-import Card from '../../components/card/index'
+import Card from '../../components/card/index';
 import img from "../../assets/sonido.png";
-import "./style.scss"
+import Btn from "../../components/Button/Button";
+import "./style.scss";
+
 
 const datos=[
     {
@@ -13,7 +15,7 @@ const datos=[
     {
         imgDJ:img,
         sonido:"David Guetta",
-        precio:200,
+        precio:20,
         descripcion:"Este sonido cuenta con grandes beneficion como lo son luces, y un amplia gama de discos"
     },
     {
@@ -66,8 +68,8 @@ const Sonido = () =>{
                 </div>
 
                 <div className="buttons-container">
-                    <button className="button-omitir">Omitir</button>
-                    <button className={(packSelected==undefined?"button-continue":"button-continue selected")}>Continue</button>
+                    <Btn type="omitir">Omitir</Btn>
+                    <Btn type="continue">Continuar</Btn>
                 </div>
             </div>
         </>

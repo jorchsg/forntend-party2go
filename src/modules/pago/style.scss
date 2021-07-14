@@ -1,0 +1,178 @@
+.pago-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.title {
+    text-align: start;
+    margin: 2% 2% 2% 0%;
+}
+
+.right-container {
+    width: 500px;
+    margin: 2%;
+    .select-paymethod {
+        align-content: flex-start;
+        margin-bottom: 20px;
+        .buttons-selectables {
+            display: flex;
+            width: 415px;
+            .container-btn {
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+                button {
+                    border: 1px solid transparent;
+                }
+                p {
+                    font-size: 14px;
+                    color: #9696A0;
+                }
+                .button-component--oxxo {
+                    width: 190px;
+                    padding: 60px 0px 60px 0px;
+                    margin: 10px;
+                    border-radius: 8px;
+                }
+                .button-component--paypal {
+                    margin: 10px;
+                    border-radius: 8px;
+                    padding: 60px 30px 60px 30px;
+                }
+                .payment-selected {
+                    border: 1px solid red;
+                }
+            }
+        }
+    }
+    .confirm-data {
+        align-content: flex-start;
+        margin-bottom: 20px;
+        .data {
+            display: flex;
+            background: #EAEAEC;
+            width: 410px;
+            height: 130px;
+            border-radius: 8px;
+            .data-info {
+                width: 80%;
+                padding: 1% 0% 0% 5%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                p {
+                    margin: 1%;
+                    font-size: 14px;
+                    color: #2D2D41;
+                }
+            }
+            .editar {
+                padding: 6% 0%;
+                a {
+                    text-decoration: none;
+                    color: #2277F6;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .confirm-direction {
+        align-content: flex-start;
+        margin-bottom: 20px;
+        .direction {
+            display: flex;
+            background: #EAEAEC;
+            width: 410px;
+            height: 75px;
+            border-radius: 8px;
+            .direction-info {
+                width: 80%;
+                padding: 1% 0% 0% 5%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                p {
+                    margin: 1%;
+                    font-size: 14px;
+                    color: #2D2D41;
+                    position: relative;
+                }
+            }
+            .editar {
+                padding: 5% 0%;
+                a {
+                    text-decoration: none;
+                    color: #2277F6;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+.left-container {
+    width: 400px;
+    height: 450px;
+    margin: 2%;
+    background-color: #EAEAEC;
+    border-radius: 8px;
+    .logo-fiesta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-width: 120px;
+        h3 {
+            margin-top: 15px;
+            border-bottom: 1px solid #9696A0;
+        }
+    }
+    .pay-list {
+        margin: 20px 20px 10px 20px;
+        border-bottom: 1px solid #9696A0;
+        h5 {
+            font-weight: bold;
+        }
+        .list {
+            margin: 10px 0px 10px 30px;
+            flex-direction: column;
+            .concepto {
+                display: flex;
+                justify-content: space-between;
+                p {
+                    font-size: 14px;
+                    color: #2D2D41;
+                    margin: 7px;
+                }
+            }
+        }
+    }
+    .conceptoTotal {
+        margin: 5px 50px 20px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h5 {
+            color: #2D2D41;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        h4 {
+            color: #2D2D41;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
+    .confirm-button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        Button {
+            width: 80%;
+            background: linear-gradient(142.75deg, #ED5026 -2.2%, #F02748 50.89%, #F71694 107.64%);
+            color: white;
+        }
+    }
+}
