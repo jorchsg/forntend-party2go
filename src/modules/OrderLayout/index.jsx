@@ -11,6 +11,9 @@ import Salon from '../Salon/Salon';
 import Sillas from '../Sillas/Sillas'
 import './style.scss';
 import Mesas from '../Mesas/Mesas';
+import Sonido from '../sonido/index'
+import Pago from '../pago/index'
+import Button from '../../components/Button/Button';
 
 const useQontoStepIconStyles = makeStyles({
   root: {
@@ -149,14 +152,24 @@ function getStepContent(step) {
       return Mesas();
     case 2:
       return Sillas();
+    case 3:
+      return Sonido();
+    case 4:
+      return Pago();
     default:
       return 'Unknown step';
   }
 }
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(2);
+  const [activeStep, setActiveStep] = React.useState(0);
   const steps = ['Salones', 'Mesas', 'Sillas', 'Sonido', 'Pago'];
+
+  const nextStep=()=>{
+    if(activeStep < 4){
+      setActiveStep(activeStep+1);
+    }
+  }
 
   return (
     <div className='steps-layout'>
@@ -170,6 +183,9 @@ export default function CustomizedSteppers() {
       </Stepper>
       <div className='steps-content'>
         {getStepContent(activeStep)}
+      </div>
+      <div className='steps-actions'>
+          <Button type='solid' onClick={nextStep}>Continuar</Button>
       </div>
     </div>
   );
