@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo_piñata from "../../assets/login-piñata.png";
 import logo from "../../assets/logo.png";
 import divider from "../../assets/divider.png";
@@ -7,6 +7,7 @@ import logo_white from "../../assets/logo-party2go-white.svg";
 import "./Login.scss";
 import axios from "axios";
 import config from "../../config";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const [error, setError] = React.useState(undefined);
@@ -14,6 +15,15 @@ const Login = () => {
     email: undefined,
     password: undefined,
   });
+  const history = useHistory();
+
+  useEffect(() => {
+    const hasLogin = localStorage.getItem("login");
+    console.log(hasLogin);
+    if (hasLogin) {
+      history.push("/");
+    }
+  }, []);
 
   const handleOnChange = (e) => {
     setError(undefined);
@@ -22,6 +32,7 @@ const Login = () => {
       [e.target.name]: e.target.value,
     });
   };
+  //Redirects to '/' if credetials granted
   const handleSubmit = async (e) => {
     //Avoid html default submit
     e.preventDefault();
@@ -32,19 +43,23 @@ const Login = () => {
 
     //Call to API
     try {
-      const result = await axios.get(`${config.backendURL}login`, {
-        params: {
-          correo: "johar@gmail.com",
-          password: "123",
-        },
-      });
-      console.log(result);
-      setError("Usuario o contraseña invalidos");
+      const result = await axios.get(
+        `${config.backendURL}login/${form.email}/${form.password}`
+      );
+      if (result.data.Status !== 0) {
+        setError("Usuario o contraseña invalidos");
+      } else {
+        const string = JSON.stringify(form);
+        const base64Login = btoa(string);
+        localStorage.setItem("login", base64Login);
+        history.push("/");
+      }
     } catch (error) {
       setError("Error de red. Vuelva a intentarlo más tarde");
       console.error(error);
     }
   };
+
   return (
     <div className="page">
       <img className="logo-white" src={logo_white} alt="" />
