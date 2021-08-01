@@ -5,10 +5,24 @@ import iconNoResults from "../../assets/icon-no-results.png";
 import TextField from "@material-ui/core/TextField";
 import OrderContentLayout from "../OrderContentLayout";
 import "./Salon.scss";
+import { useEffect } from "react";
+import axios from "axios";
+import config from "../../config";
+import CardComponent from "../../components/card";
 
 const Salon = () => {
   const [people, setPeople] = React.useState(0);
-
+  const [salones, setSalones] = React.useState(undefined);
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await axios.get(`${config.backendURL}salones`);
+        setSalones(response.data.Data);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }, []);
   return (
     <OrderContentLayout
       selection={
@@ -33,7 +47,7 @@ const Salon = () => {
               step: 300, // 5 min
             }}
           />
-          
+
           <QuantityForm
             title="Cantidad de personas"
             minQuantity={1}
@@ -46,12 +60,30 @@ const Salon = () => {
         </>
       }
       results={
-        <div className="no-results">
-          <img src={iconNoResults} alt="No Results" />
-          <h3>
-            <strong>No hay resultados</strong>
-          </h3>
-        </div>
+        !salones ? (
+          <div className="no-results">
+            <img src={iconNoResults} alt="No Results" />
+            <h3>
+              <strong>No hay resultados</strong>
+            </h3>
+          </div>
+        ) : (
+          salones.map((salon) => {
+            return (
+              <CardComponent
+                key={salon.idSalones}
+                image={
+                  "https://i.ibb.co/dbJDXr0/865f3d-e348d669e70547ffb7d8021a2bfc932e-mv2.webp"
+                }
+                nameService={salon.nombre}
+                price={salon.precio}
+                isSelected={false}
+                onClick={(e) => console.log(e)}
+                description={""}
+              />
+            );
+          })
+        )
       }
     />
   );
