@@ -47,7 +47,7 @@ const Home = () => {
 
                     <h1 className="title">Nuestros Servicios</h1>
 
-                    <div className="container-cards">
+                    <div className="container-cards ">
 
                         <div className="card">
                             <img class="img" src={iconSalon} alt="Salon" />
@@ -88,18 +88,25 @@ const Home = () => {
 
                     <div className="contact-titles">
                         <h1>Contacto</h1>
-                        <p>Haznos llegar tus dudas, ¡un asesor te atenderá a la brevedad!</p>
+                        <h5>Haznos llegar tus dudas, ¡un asesor te atenderá a la brevedad!</h5>
                     </div>
 
-                    <div className="form-conmtact">
-                        <div className="form-contact">
-                            <input type="text" placeholder="Escribe tu correo electrónico" />
+                    <div className="form-contact">
+                        <div className="input-form">
+                            <input
+                                type="text"
+                                placeholder="Escribe tu correo electrónico"
+                            />
+                        </div>
+
+                        <div className="btn-form">
                             <button
                                 className="btn-send"
                             >Enviar
                             </button>
                         </div>
                     </div>
+
 
                 </section>
 
