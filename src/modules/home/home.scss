@@ -164,13 +164,17 @@ img{
     }
 
     .card{
-        max-width: 200px;
+        width: 100%;
         background-color: white;
         border-radius: 4px;
         padding: 14px;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @media screen and( min-width: 768px){
+            max-width: 200px;
+        }
     }
 
 }
@@ -190,7 +194,10 @@ img{
     box-shadow: 0px 6px 32px -10px rgba(0,0,0,0.75);
     transition: all .3s ease;
     
-
+    @media screen and (min-width: 768px){
+        margin-top: 108px;
+    }
+    
     .content-hero{
         color: $white;
         display: grid;

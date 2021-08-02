@@ -47,7 +47,7 @@ const Home = () => {
 
                     <h1 className="title">Nuestros Servicios</h1>
 
-                    <div className="container-cards ">
+                    <div className="container-cards container">
 
                         <div className="card">
                             <img class="img" src={iconSalon} alt="Salon" />
@@ -88,7 +88,7 @@ const Home = () => {
 
                     <div className="contact-titles">
                         <h1>Contacto</h1>
-                        <h5>Haznos llegar tus dudas, ¡un asesor te atenderá a la brevedad!</h5>
+                        <h5>Háznos llegar tus dudas, ¡un asesor te atenderá a la brevedad!</h5>
                     </div>
 
                     <div className="form-contact">

@@ -26,12 +26,12 @@ const Footer = () => {
                         </div>
 
                         <div className="social">
-                            <h5>Siguenos en Nuestras Redes Sociales: </h5>
+                            <h5>Siguenos en redes sociales: </h5>
                             <div className="icons-social-networks">
-                                <img className="item-1" src={Twitter} alt="icon twitter" />
-                                <img className="item-2" src={Youtube} alt="icon-youtube" />
-                                <img className="item-3" src={Facebook} alt="icon-facebook" />
-                                <img className="item-4" src={Instagram} alt="icon-instagram" />
+                                <img className="item" src={Twitter} alt="icon twitter" />
+                                <img className="item" src={Youtube} alt="icon-youtube" />
+                                <img className="item" src={Facebook} alt="icon-facebook" />
+                                <img className="item" src={Instagram} alt="icon-instagram" />
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-apps">
-                        <h4>DESCARGA LA APP DE PART2GO</h4>
+                        <h4>Descarga la app</h4>
                         <div class="apps">
                             <div className="appStore">
                                 <img src={AppStore} alt="app sotre" />
@@ -58,11 +58,11 @@ const Footer = () => {
                     </div>
                 </div>
 
+                <div className="rights">
+                    <p>Copyright ©  Party2Go 2021 - Todos los derechos reservados</p>
+                </div>
             </div>
 
-            <div className="rights">
-                <p>Copyright ©  Party2Go 2021 - Todos los derechos reservados</p>
-            </div>
 
         </>
     )
