@@ -17,7 +17,7 @@ const ResponsiveNavBar = () => {
                 <NavLink to='/'>
                     <img src={Logo} alt='logo' />
                 </NavLink>
-                {/* <Bars /> */}
+                <Bars />
                 <NavMenu>
                     <NavLink to='/' activeStyle>
                         Home
@@ -34,6 +34,7 @@ const ResponsiveNavBar = () => {
                     {/* Second Nav
                     <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
                 </NavMenu>
+
                 <NavBtn>
                     <NavBtnLink to='/login'>Entrar</NavBtnLink>
                 </NavBtn>

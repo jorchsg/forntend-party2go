@@ -23,7 +23,17 @@ export const NavLink = styled(Link)`
   height: 100%;
   cursor: pointer;
   &.active {
+    color: #fff;
+    font-weight: bold;
+  }
+  &:hover{
     color: yellow;
+    opacity: 0.7;
+  }
+  img{
+    @media screen and (min-width: 992px) {
+        display: none;
+    }
   }
 `;
 

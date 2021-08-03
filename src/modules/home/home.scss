@@ -186,7 +186,8 @@ img{
     margin-top: 108px;
 
     background: #000 url("../../assets/empieza-aqui.png");
-    color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 320px;
     width: 100%;
 
