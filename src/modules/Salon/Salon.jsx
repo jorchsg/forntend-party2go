@@ -13,11 +13,13 @@ import CardComponent from "../../components/card";
 const Salon = () => {
   const [people, setPeople] = React.useState(0);
   const [salones, setSalones] = React.useState(undefined);
+  
   useEffect(() => {
     (async () => {
       try {
         const response = await axios.get(`${config.backendURL}salones`);
         setSalones(response.data.Data);
+        console.log(response.data.Data)
       } catch (error) {
         console.error(error);
       }

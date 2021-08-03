@@ -1,39 +1,33 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import Card from '../../components/card/index';
 import img from "../../assets/sonido.png";
-import Btn from "../../components/Button/Button";
+
 import "./style.scss";
+import axios from 'axios';
+import config from '../../config';
 
 
-const datos=[
-    {
-        imgDJ:img,
-        sonido:"Avicci",
-        precio:3000,
-        descripcion:"Este sonido cuenta con grandes beneficion como lo son luces, y un amplia gama de discos"
-    },
-    {
-        imgDJ:img,
-        sonido:"David Guetta",
-        precio:20,
-        descripcion:"Este sonido cuenta con grandes beneficion como lo son luces, y un amplia gama de discos"
-    },
-    {
-        imgDJ:img,
-        sonido:"Steveaoki",
-        precio:100,
-        descripcion:"Este sonido cuenta con grandes beneficion como lo son luces, y un amplia gama de discos"
-    },
-    {
-        imgDJ:img,
-        sonido:"MO",
-        precio:3500,
-        descripcion:"Este sonido cuenta con grandes beneficion como lo son luces, y un amplia gama de discos"
-    }      
-]
+
+
+
+
 const Sonido = () =>{
     const [packSelected,setPackSelected] = React.useState(undefined)
     console.log(packSelected)
+    const [sonidos,setSonidos]=React.useState(undefined);
+    useEffect(() => {
+        (async () => {
+          try {
+            const response = await axios.get(`${config.backendURL}sonido`);
+            setSonidos(response.data);
+            
+          } catch (error) {
+            console.error(error);
+          }
+        })();
+      }, []);
+   
+
     
     return(
     
@@ -43,33 +37,29 @@ const Sonido = () =>{
                 <div className="list-container">
                     <div className="sonido-grid">
 
-                        {datos.map((info,i)=>{
-                            return(
-
-                                <Card
-                                    isSelected = {packSelected === i}
-                                    image={info.imgDJ} 
-                                    nameService={info.sonido}
-                                    price={info.precio}
-                                    description={info.descripcion}
-                                    key={i}
-                                    onClick={
-                                        ()=>{
-                                            setPackSelected(i)
-                                        }
-                                    }>
-                                </Card>
-                            )
-                        })
                         
+                            
+                        {
+                            !sonidos ? <div>No hay sonidos disponibles</div>:
+                            sonidos.map((info)=>{
+                                return(
+                                    <Card
+                                        isSelected = {packSelected === info.idSonido}
+                                        image={img} 
+                                        nameService={info.nombre}
+                                        price={info.precioHora}
+                                        description={info.descripcion}
+                                        key={info.idSonido}
+                                        onClick={
+                                            ()=>{
+                                                setPackSelected(info.idSonido)
+                                            }}/>
+                                )
+                            })
                         }
+                        
                     </div>
                         
-                </div>
-
-                <div className="buttons-container">
-                    <Btn type="omitir">Omitir</Btn>
-                    <Btn type="continue">Continuar</Btn>
                 </div>
             </div>
         </>
