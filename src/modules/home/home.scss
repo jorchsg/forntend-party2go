@@ -187,10 +187,10 @@ img{
 
     background: #000 url("../../assets/empieza-aqui.png");
     color: #fff;
-    height: 480px;
+    height: 320px;
     width: 100%;
 
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -203,6 +203,7 @@ img{
     
     @media screen and (min-width: 768px){
         margin-top: 108px;
+        height: 480px;
     }
 
     .color-overlay{
@@ -217,6 +218,14 @@ img{
         color: $white;
         padding: 24px;
         z-index: 1;
+
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-row-gap: 20px;
+
+        @media screen and(min-width: 768px){
+            grid-row-gap: 40px;
+        }
     }
 
     .hero-title{
@@ -225,9 +234,23 @@ img{
 
     .hero-text{
         text-align: center;
+
+        @media screen and (min-width: 768px) {
+            text-align: left;
+        }
     }
 
     .button-services{
+
+        display: grid;
+        justify-content: center;
+        align-items: center;
+
+        @media screen and (min-width: 768px){
+            justify-content: left;
+            align-items: start;
+        }
+
         button{
             background-color: transparent;
             border-style: solid;
