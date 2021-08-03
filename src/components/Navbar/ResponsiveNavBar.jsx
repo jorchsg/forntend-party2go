@@ -6,6 +6,7 @@ import {
     Bars,
     NavMenu,
     NavBtn,
+    NavButtons,
     NavBtnLink
 } from './NavbarElements';
 
@@ -35,12 +36,12 @@ const ResponsiveNavBar = () => {
                     <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
                 </NavMenu>
 
+
                 <NavBtn>
                     <NavBtnLink to='/login'>Entrar</NavBtnLink>
-                </NavBtn>
-                <NavBtn>
                     <NavBtnLink to='/login'>Crear Cuenta</NavBtnLink>
                 </NavBtn>
+
             </Nav>
         </>
     )

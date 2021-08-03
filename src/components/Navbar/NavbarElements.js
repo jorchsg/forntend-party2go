@@ -77,9 +77,13 @@ export const NavBtn = styled.nav`
   }
 `;
 
+
 export const NavBtnLink = styled(Link)`
   border-radius: 4px;
-  background: #256ce1;
+  background: #2D2D41;
+  :first-child{
+    margin-right: 18px;
+  }
   padding: 10px 22px;
   color: #fff;
   outline: none;
