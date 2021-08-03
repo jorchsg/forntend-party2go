@@ -70,7 +70,6 @@ const Home = () => {
 
                 <section className="info-hero">
                     <div className="content-hero container">
-
                         <div className="hero-title">
                             <h1>Empieza Aqui</h1>
                         </div>
@@ -81,6 +80,7 @@ const Home = () => {
                             <button>Contratar Servicios</button>
                         </div>
                     </div>
+                    <div className="color-overlay"></div>
 
                 </section>
 
