@@ -14,6 +14,15 @@ import Mesas from "../Mesas/Mesas";
 import Sonido from "../sonido/index";
 import Pago from "../pago/index";
 import Button from "../../components/Button/Button";
+import { StepContext } from '../../components/ProviderStep';
+
+
+import { useEffect } from "react";
+import config from "../../config";
+import axios from "axios";
+
+
+
 
 const useQontoStepIconStyles = makeStyles({
   root: {
@@ -164,7 +173,7 @@ function getStepContent(step) {
 }
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useContext(StepContext);
   const steps = ["Salones", "Mesas", "Sillas", "Sonido", "Pago"];
 
   const nextStep = () => {
@@ -172,29 +181,35 @@ export default function CustomizedSteppers() {
       setActiveStep(activeStep + 1);
     }
   };
-  console.log('Este es el step '+activeStep)
+  console.log('Este es el step '+activeStep);
+
+
+  
 
   return (
-    <div className="steps-layout">
-      <h2 className="title steps-layout-wrapper">Proceso de orden</h2>
-      <Stepper
-        className="steps-layout-wrapper"
-        alternativeLabel
-        activeStep={activeStep}
-        connector={<ColorlibConnector />}
-      >
-        {steps.map((label) => (
-          <Step key={label}>
-            <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
-          </Step>
-        ))}
-      </Stepper>
-      <div className="steps-content">{getStepContent(activeStep)}</div>
-      <div className="steps-actions">
-        <Button type="solid" onClick={nextStep}>
-          Continuar
-        </Button>
+    
+      <div className="steps-layout">
+        <h2 className="title steps-layout-wrapper">Proceso de orden</h2>
+        <Stepper
+          className="steps-layout-wrapper"
+          alternativeLabel
+          activeStep={activeStep}
+          connector={<ColorlibConnector />}
+        >
+          {steps.map((label) => (
+            <Step key={label}>
+              <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+        <div className="steps-content">{getStepContent(activeStep)}</div>
+        <div className="steps-actions">
+          <Button type="solid" onClick={nextStep}>
+            Continuar
+          </Button>
+        </div>
       </div>
-    </div>
+      
+    
   );
 }

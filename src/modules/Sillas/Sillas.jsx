@@ -6,10 +6,12 @@ import MenuItem from '@material-ui/core/MenuItem';
 import OrderContentLayout from "../OrderContentLayout";
 import "./Sillas.scss";
 import CustomSelect from "../../components/CustomSelect";
-
+import {AppContext} from "../../components/Provider/index"
+import CardComponent from "../../components/card";
 const Sillas = () => {
   const [sillas, setSillas] = React.useState(0);
-
+  const [list,setList]=React.useContext(AppContext);
+  console.log(list)
   return (
     <OrderContentLayout
       selection={
@@ -32,12 +34,27 @@ const Sillas = () => {
         </>
       }
       results={
+        !list ?
         <div className="no-results">
           <img src={iconNoResults} alt="No Results" />
           <h3>
             <strong>No hay resultados</strong>
           </h3>
         </div>
+        :
+        list.map((silla)=>{
+          return(
+            <CardComponent 
+          image='https://www.sams.com.mx/images/product-images/img_small/000261710s.jpg'
+          nameService={silla.tipo}
+          price={silla.precioUnitario}
+          key={silla.idSillas}
+        />
+          )
+        })
+          
+        
+        
       }
     />
   );

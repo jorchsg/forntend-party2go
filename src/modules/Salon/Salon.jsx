@@ -9,22 +9,13 @@ import { useEffect } from "react";
 import axios from "axios";
 import config from "../../config";
 import CardComponent from "../../components/card";
+import { AppContext } from "../../components/Provider/index";
 
 const Salon = () => {
   const [people, setPeople] = React.useState(0);
-  const [salones, setSalones] = React.useState(undefined);
+  const [salones, setSalones] = React.useContext(AppContext);
   
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await axios.get(`${config.backendURL}salones`);
-        setSalones(response.data.Data);
-        console.log(response.data.Data)
-      } catch (error) {
-        console.error(error);
-      }
-    })();
-  }, []);
+  console.log(salones);
   return (
     <OrderContentLayout
       selection={
@@ -70,7 +61,7 @@ const Salon = () => {
             </h3>
           </div>
         ) : (
-          salones.map((salon) => {
+          salones?.Data.map((salon) => {
             return (
               <CardComponent
                 key={salon.idSalones}

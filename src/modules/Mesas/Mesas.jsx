@@ -7,10 +7,14 @@ import MenuItem from '@material-ui/core/MenuItem';
 import OrderContentLayout from "../OrderContentLayout";
 import "./Mesas.scss";
 import CustomSelect from "../../components/CustomSelect";
+import { AppContext } from "../../components/Provider/index";
+import { Card } from "@material-ui/core";
+import CardComponent from "../../components/card";
 
 const Mesas = () => {
   const [mesas, setMesas] = React.useState(0);
-
+  const [listM,setListM]= React.useContext(AppContext);
+  console.log(listM)
   return (
     <OrderContentLayout
       selection={
@@ -33,12 +37,25 @@ const Mesas = () => {
         </>
       }
       results={
+        !listM ?
         <div className="no-results">
           <img src={iconNoResults} alt="No Results" />
           <h3>
             <strong>No hay resultados</strong>
           </h3>
         </div>
+         :
+        listM.map((mesas)=>{
+          return(
+            <CardComponent
+              
+              nameService={mesas.nombre}
+              price={mesas.precioUnitario}
+              key={mesas.idMesa}
+            />
+          )
+        })
+        
       }
     />
   );

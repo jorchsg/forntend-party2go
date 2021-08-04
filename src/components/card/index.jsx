@@ -21,6 +21,7 @@ import "./style.scss";
 const CardComponent = (props) => {
   return (
     <>
+      
       <Card
         className={props.isSelected ? "card active" : "card"}
         onClick={props.onClick}
@@ -55,6 +56,7 @@ const CardComponent = (props) => {
           </CardContent>
         </CardActionArea>
       </Card>
+     
     </>
   );
 };

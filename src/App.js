@@ -7,6 +7,8 @@ import DefaultLayout from './modules/DefaultLayout';
 import Page404 from './modules/Page404/index';
 import Sonido from './modules/sonido/index';
 import Pago from './modules/pago/index';
+import Provider from '../src/components/Provider/index'
+import StepProvider from '../src/components/ProviderStep/index'
 import './index.scss';
 
 function App() {
@@ -14,13 +16,14 @@ function App() {
     <Switch>
       <Route path="/login" exact component={Login} />
       <DefaultLayout>
-        <Route path="/"  exact component={Home}></Route>
-        <Route path="/order" exact component={OrderLayout}></Route>
-        <Route path="/404" exact component={Page404}></Route>
-     
-        <Route path="/sonido" exact component={Sonido}></Route>
-        <Route path="/pago" exact component={Pago}></Route>
+            <Route path="/"  exact component={Home}></Route>
+            <Route path="/404" exact component={Page404}></Route>
 
+        <StepProvider>
+          <Provider>
+            <Route path="/order" exact component={OrderLayout}></Route>
+          </Provider>
+          </StepProvider>
       </DefaultLayout>
     </Switch>
   );
