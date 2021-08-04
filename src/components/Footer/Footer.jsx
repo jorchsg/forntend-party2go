@@ -41,7 +41,7 @@ const Footer = () => {
                         <ul className="service-list">
                             <li>Servicios</li>
                             <li>Empieza Aquí</li>
-                            <li>Conctacto</li>
+                            <li>Contacto</li>
                         </ul>
                     </div>
 

@@ -37,6 +37,10 @@ p{
 
         .social-networks{
             display: grid;
+
+            p{
+                margin-top: 12px;
+            }
            
             @media screen and (min-width: 1280px) {
                 grid-template-rows: repeat(2, 1fr);
@@ -62,6 +66,7 @@ p{
                 
                     .item{
                         margin-right: 12px;
+                        cursor: pointer;
                     }
                     
                 }
@@ -71,6 +76,10 @@ p{
         .footer-sections{
             margin-top: 12px;
 
+            h4{
+                height: 28px;
+            }
+
             @media screen and (min-width: 1280px) {
                 margin: 0px;
             }
@@ -79,6 +88,11 @@ p{
                 display: flex;
                 li{
                     margin-right: 12px;
+
+                     &:hover{
+                         cursor: pointer;
+                         color: yellow;
+                     }
                 }
             }
         }
@@ -87,6 +101,10 @@ p{
         .footer-apps{
 
             display: none;
+
+            h4{
+                height: 28px;
+            }
 
             @media screen and(min-width: 992px){
                 display: grid;
@@ -101,6 +119,7 @@ p{
 
                     img{
                         margin-right: 12px;
+                        cursor: pointer;
                     }
                 }
             }
