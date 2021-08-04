@@ -4,47 +4,50 @@
 }*/
 
 .card {
-    border: solid transparent 1px;
-    width: 410px;
-    margin: 1%;
-    font-family: Montserrat;
-    padding: 0%;
-    &.active {
-        /* shadow/custom */
-        box-shadow: -4px 4px 40px rgba(0, 0, 0, 0.2);
-    }
+  border-width: 1px;
+  width: 410px;
+  margin: 1%;
+  font-family: Montserrat;
+  padding: 0%;
+  &.active {
+    /* shadow/custom */
+    box-shadow: -4px 4px 40px rgba(0, 0, 0, 0.2);
+  }
+  &.MuiPaper-elevation1 {
+    box-shadow: none;
+  }
 }
 
 .imgService {
-    width: 100%;
-    background: none;
+  width: 100%;
+  background: none;
 }
 
 .nameAndPrice {
-    display: flex;
-    align-items: center;
-    .name {
-        color: #2d2d41;
-        font-weight: bold;
-        font-size: 24px;
-        text-align: left;
-    }
-    .price {
-        color: #ed5026;
-        margin-left: 2%;
-        font-size: 18px;
-        font-weight: bold;
-        align-content: center;
-        justify-content: center;
-    }
+  display: flex;
+  align-items: center;
+  .name {
+    color: #2d2d41;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: left;
+  }
+  .price {
+    color: #ed5026;
+    margin-left: 2%;
+    font-size: 18px;
+    font-weight: bold;
+    align-content: center;
+    justify-content: center;
+  }
 }
 
 .descripcion-content {
-    display: flex;
-    margin-top: 10px;
-    .descripcion {
-        color: #2d2d41;
-        font-size: 14px;
-        text-align: justify;
-    }
+  display: flex;
+  margin-top: 10px;
+  .descripcion {
+    color: #2d2d41;
+    font-size: 14px;
+    text-align: justify;
+  }
 }

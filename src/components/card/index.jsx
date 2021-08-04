@@ -21,11 +21,9 @@ import "./style.scss";
 const CardComponent = (props) => {
   return (
     <>
-      
       <Card
         className={props.isSelected ? "card active" : "card"}
         onClick={props.onClick}
-        
       >
         <CardActionArea>
           <img className="imgService" src={props.image} alt="Img service" />
@@ -39,8 +37,9 @@ const CardComponent = (props) => {
                 )}
               </h5>
               <h4 className="price">
-                 {(props.price == null || props.price=="") ? 'Undefined' : '$'+props.price}
-                
+                {props.price == null || props.price == ""
+                  ? "Undefined"
+                  : "$" + props.price}
               </h4>
             </div>
             <div className="descripcion-content">
@@ -56,7 +55,6 @@ const CardComponent = (props) => {
           </CardContent>
         </CardActionArea>
       </Card>
-     
     </>
   );
 };
