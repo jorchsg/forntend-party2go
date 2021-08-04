@@ -1,347 +1,338 @@
 // Importing Variables
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
 
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
-img{
-    max-width: 100%;
+img {
+  max-width: 100%;
 }
 
-@media screen and (max-width: 575.98px){
-    h1{
-        font-size: 24px;
-    }
+@media screen and (max-width: 575.98px) {
+  h1 {
+    font-size: 24px;
+  }
 
-    h5{
-        font-size: 18px;
-    }
+  h5 {
+    font-size: 18px;
+  }
 
-    p{
-        font-size: 14px;
-    }
-    
+  p {
+    font-size: 14px;
+  }
 }
 
 // Container For All Page
-.container{
-    // Don't allow to use all Screen
-    max-width: 1400px;
-    // Create an auto margin
-    width: 90%;
-    // Center Content
-    margin: 0 auto;
+.container {
+  // Don't allow to use all Screen
+  max-width: 1400px;
+  // Create an auto margin
+  width: 90%;
+  // Center Content
+  margin: 0 auto;
 }
 
 // Hero
-.hero{
-    grid-gap: 24px;
-    align-items: center;
-    margin-top: 48px;
-    margin-bottom: 48px;
+.hero {
+  grid-gap: 24px;
+  align-items: center;
+  margin-top: 48px;
+  margin-bottom: 48px;
 
-    .content{
-
-        display: grid;
-
-        .title{
-            margin-bottom: 32px;
-        
-            h1{
-                font-size: 24px;
-            }
-        }
-
-        .btn-container{
-            display: flex;
-            justify-content: center;
-        }
-
-
-        button {
-            background-color: transparent;
-            border-style: solid;
-            border-color: $primary-normal;
-            color: $primary-normal;
-            text-align: center;
-            padding: 16px;
-            font-weight: $bold;
-            font-size: $p-button;
-            padding: 14px 24px;
-            border-radius: 4px;
-            width: 207px;
-            height: 48px;
-            cursor: pointer;
-
-            &:hover{
-                background: $primary;
-                color: $white;
-            }
-        }
-
-        .hero-img{
-            margin-top: 48px;
-        }
-
-        @media (min-width: 768PX) {
-
-            margin-top: 80px;
-            margin-bottom: 80px;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            .title{
-                h1{
-                    text-align: left;
-                    font-size: 48px;
-                }
-            }
-
-            .btn-container{
-                display: flex;
-                justify-content: start;
-            }
-
-            .hero-img{
-                margin-top: 0px;
-            }
-
-           
-        }
-    }
-}
-
-
-.about{
+  .content {
     display: grid;
-    font-size: $p-small;
-    text-align: center;
-    margin-bottom: 48px;
-}
 
-.title{
-    text-align: center;
-    margin-bottom: 54px;
-}
+    .title {
+      margin-bottom: 32px;
 
-.about{
-    @media (min-width: 768px){
-        width: 50%;
-        font-size: $p-large;
-        margin-bottom: 80px;
+      h1 {
+        font-size: 24px;
+      }
     }
+
+    .btn-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    button {
+      background-color: transparent;
+      border-style: solid;
+      border-color: $primary-normal;
+      color: $primary-normal;
+      text-align: center;
+      padding: 16px;
+      font-weight: $bold;
+      font-size: $p-button;
+      padding: 14px 24px;
+      border-radius: 4px;
+      width: 207px;
+      height: 48px;
+      cursor: pointer;
+
+      &:hover {
+        background: $primary;
+        color: $white;
+      }
+    }
+
+    .hero-img {
+      margin-top: 48px;
+    }
+
+    @media (min-width: 768px) {
+      margin-top: 80px;
+      margin-bottom: 80px;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      .title {
+        h1 {
+          text-align: left;
+          font-size: 48px;
+        }
+      }
+
+      .btn-container {
+        display: flex;
+        justify-content: start;
+      }
+
+      .hero-img {
+        margin-top: 0px;
+      }
+    }
+  }
 }
 
-.description{
-    text-align: center;
+.about {
+  display: grid;
+  font-size: $p-small;
+  text-align: center;
+  margin-bottom: 48px;
 }
 
+.title {
+  text-align: center;
+  margin-bottom: 54px;
+}
+
+.about {
+  @media (min-width: 768px) {
+    width: 50%;
+    font-size: $p-large;
+    margin-bottom: 80px;
+  }
+}
+
+.description {
+  text-align: center;
+}
 
 // Services
-.module{
-     h1{
-        text-align: center;
+.module {
+  h1 {
+    text-align: center;
+  }
+
+  .container-cards {
+    display: grid;
+    grid-row-gap: 14px;
+    justify-items: center;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      grid-template-columns: (50% 50%);
     }
 
-    .container-cards{
-        display: grid;
-        grid-row-gap: 14px;
-        justify-items: center;
-        align-items: center;
-
-        @media (min-width: 768px){
-            grid-template-columns: (50% 50%);
-        }
-
-        @media (min-width: 992px){
-            grid-template-columns: (25% 25% 25% 25%);
-            grid-column-gap: 24px;
-        }
+    @media (min-width: 992px) {
+      grid-template-columns: (25% 25% 25% 25%);
+      grid-column-gap: 24px;
     }
+  }
 
-    .card{
-        width: 100%;
-        background-color: white;
-        border-radius: 4px;
-        padding: 14px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+  .card {
+    width: 100%;
+    background-color: white;
+    border-radius: 4px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-        @media screen and( min-width: 768px){
-            max-width: 200px;
-        }
+    @media screen and( min-width: 768px) {
+      max-width: 200px;
     }
-
+  }
 }
-
 
 // Info Hero
 
-.info-hero{
+.info-hero {
+  margin-top: 108px;
+
+  background: #000 url("../../assets/empieza-aqui.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 320px;
+  width: 100%;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  // Shadows
+  -webkit-box-shadow: 0px 6px 32px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 6px 32px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 6px 32px -10px rgba(0, 0, 0, 0.75);
+  transition: all 0.3s ease;
+
+  @media screen and (min-width: 768px) {
     margin-top: 108px;
+    height: 480px;
+  }
 
-    background: #000 url("../../assets/empieza-aqui.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 320px;
+  .color-overlay {
     width: 100%;
+    height: 100%;
+    background: linear-gradient(#ed5026, #f02748, #f71694);
+    opacity: 0.5;
+    position: absolute;
+  }
 
+  .content-hero {
+    color: $white;
+    padding: 24px;
+    z-index: 1;
+
+    display: grid;
+    grid-template-rows: (3, 1fr);
+    grid-row-gap: 20px;
+
+    @media screen and(min-width: 768px) {
+      grid-row-gap: 40px;
+    }
+  }
+
+  .hero-title {
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  .button-services {
     display: grid;
     justify-content: center;
     align-items: center;
-    position: relative;
-    
-    // Shadows
-    -webkit-box-shadow: 0px 6px 32px -10px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 6px 32px -10px rgba(0,0,0,0.75);
-    box-shadow: 0px 6px 32px -10px rgba(0,0,0,0.75);
-    transition: all .3s ease;
-    
-    @media screen and (min-width: 768px){
-        margin-top: 108px;
-        height: 480px;
+
+    @media screen and (min-width: 768px) {
+      justify-content: left;
+      align-items: start;
     }
 
-    .color-overlay{
-        width: 100%;
-        height: 100%;
-        background:linear-gradient(#ED5026,#F02748,#F71694);
-        opacity: .5;
-        position: absolute;
-    }
-    
-    .content-hero{
+    button {
+      background-color: transparent;
+      border-style: solid;
+      border-color: $white;
+      color: $white;
+      text-align: center;
+      padding: 16px;
+      font-weight: $bold;
+      font-size: $p-button;
+      padding: 14px 24px;
+      border-radius: 4px;
+      width: 207px;
+      height: 48px;
+      cursor: pointer;
+
+      &:hover {
+        background: $primary;
         color: $white;
-        padding: 24px;
-        z-index: 1;
-
-        display: grid;
-        grid-template-rows: (3, 1fr);
-        grid-row-gap: 20px;
-
-        @media screen and(min-width: 768px){
-            grid-row-gap: 40px;
-        }
+        border: none;
+      }
     }
-
-    .hero-title{
-        text-align: center;
-    }
-
-    .hero-text{
-        text-align: center;
-
-        @media screen and (min-width: 768px) {
-            text-align: left;
-        }
-    }
-
-    .button-services{
-
-        display: grid;
-        justify-content: center;
-        align-items: center;
-
-        @media screen and (min-width: 768px){
-            justify-content: left;
-            align-items: start;
-        }
-
-        button{
-            background-color: transparent;
-            border-style: solid;
-            border-color: $white;
-            color: $white;
-            text-align: center;
-            padding: 16px;
-            font-weight: $bold;
-            font-size: $p-button;
-            padding: 14px 24px;
-            border-radius: 4px;
-            width: 207px;
-            height: 48px;
-            cursor: pointer;
-
-            &:hover{
-                background: $primary;
-                color: $white;
-                border: none;
-            }
-        }
-    }
+  }
 }
 
-.contact{
+.contact {
+  margin-top: 37px;
+  margin-bottom: 37px;
 
-    margin-top: 37px;
-    margin-bottom: 37px;
+  @media screen and(min-width: 1200px) {
+    margin-top: 74px;
+    margin-bottom: 74px;
+  }
 
-    @media screen and(min-width: 1200px) {
-        margin-top: 74px;
-        margin-bottom: 74px;
+  h1 {
+    text-align: center;
+  }
+
+  h5 {
+    text-align: center;
+  }
+
+  .form-contact {
+    display: grid;
+    margin-top: 16px;
+
+    @media screen and(min-width: 768px) {
+      grid-template-columns: 85% 15%;
+      grid-gap: 14px;
     }
 
-    h1{
+    .input-form {
+      input {
+        padding: 10px 16px;
+        height: 46px;
+        border-radius: 4px;
+        font-size: 12px;
+        line-height: 22px;
+        font-weight: 500;
+        color: $marine-blue-500;
+        border-style: solid;
+        width: 100%;
+      }
+    }
+
+    .btn-form {
+      button {
+        padding: 14px 24px;
+        background: linear-gradient(
+          142.75deg,
+          #ed5026 -2.2%,
+          #f02748 50.89%,
+          #f71694 107.64%
+        );
+        color: $white;
+        cursor: pointer;
+        border-radius: 4px;
+        height: 48px;
+        border-style: solid;
+        border-color: $primary-normal;
         text-align: center;
-    }
+        font-weight: $bold;
+        font-size: $p-button;
+        width: 100%;
+        margin-top: 20px;
 
-    h5{
-        text-align: center;
-    }
-
-    .form-contact{
-
-            display: grid;
-            margin-top: 16px;
-            
-            @media screen and(min-width: 768px) {
-                grid-template-columns: 85% 15%;
-                grid-gap: 14px;
-            }
-
-            .input-form{
-                input {
-                    padding: 10px 16px;
-                    height: 46px;
-                    border-radius: 4px;
-                    font-size: 12px;
-                    line-height: 22px;
-                    font-weight: 500;
-                    color: $marine-blue-500;
-                    border-style: solid;
-                    width: 100%;
-                }
-            }
-
-            .btn-form{
-
-                button{
-                    padding: 14px 24px;
-                    background: linear-gradient(142.75deg, #ED5026 -2.2%, #F02748 50.89%, #F71694 107.64%);
-                    color: $white;
-                    cursor: pointer;
-                    border-radius: 4px;
-                    height: 48px;
-                    border-style: solid;
-                    border-color: $primary-normal;
-                    text-align: center;
-                    font-weight: $bold;
-                    font-size: $p-button;
-                    width: 100%;
-                    margin-top: 20px;
-
-                    @media screen and(min-width: 768px){
-                        margin-top: 0px;
-                        height: 100%;
-                    }
-                }
-                
-            }
+        @media screen and(min-width: 768px) {
+          margin-top: 0px;
+          height: 100%;
         }
+      }
+    }
+  }
 }
-
