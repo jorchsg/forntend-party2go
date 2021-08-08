@@ -1,48 +1,33 @@
 import React, { createContext, useEffect } from "react";
 import axios from "axios";
 import config from "../../config";
-import { StepContext } from "../../components/ProviderStep";
-export default ({ children }) => {
-  const [state, setState] = React.useState(undefined);
-  const [step, setStep] = React.useContext(StepContext);
 
-  var pagina;
-  switch (step) {
-    case 0:
-      {
-        pagina = "salones";
-      }
-      break;
-    case 1:
-      {
-        pagina = "mesas";
-      }
+const AppProvider = ({ children }) => {
+  const [state, setState] = React.useState({
+    salones: [],
+    mesas: [],
+    sillas: [],
+    sonido: [],
+  });
 
-      break;
-    case 2:
-      {
-        pagina = "sillas";
-      }
-      break;
-    case 3:
-      {
-        pagina = "sonido";
-      }
-      break;
-
-    default:
-      break;
-  }
   useEffect(() => {
     (async () => {
       try {
-        const response = await axios.get(`${config.backendURL}${pagina}`);
-        setState(response.data);
+        const salones_response = await axios.get(`${config.backendURL}salones`);
+        const mesas_response = await axios.get(`${config.backendURL}mesas`);
+        const sillas_response = await axios.get(`${config.backendURL}sillas`);
+        const sonido_response = await axios.get(`${config.backendURL}sonido`);
+        setState({
+          salones: salones_response.data.Data,
+          mesas: mesas_response.data,
+          sillas: sillas_response.data,
+          sonido: sonido_response.data,
+        });
       } catch (error) {
         console.error(error);
       }
     })();
-  }, [step]);
+  }, []);
 
   return (
     <AppContext.Provider value={[state, setState]}>
@@ -52,3 +37,4 @@ export default ({ children }) => {
 };
 
 export const AppContext = createContext();
+export default AppProvider;

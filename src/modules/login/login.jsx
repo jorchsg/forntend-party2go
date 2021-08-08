@@ -19,11 +19,10 @@ const Login = () => {
 
   useEffect(() => {
     const hasLogin = localStorage.getItem("login");
-    console.log(hasLogin);
     if (hasLogin) {
       history.push("/");
     }
-  }, []);
+  }, [history]);
 
   const handleOnChange = (e) => {
     setError(undefined);

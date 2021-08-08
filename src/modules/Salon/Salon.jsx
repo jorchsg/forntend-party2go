@@ -5,17 +5,14 @@ import iconNoResults from "../../assets/icon-no-results.png";
 import TextField from "@material-ui/core/TextField";
 import OrderContentLayout from "../OrderContentLayout";
 import "./Salon.scss";
-import { useEffect } from "react";
-import axios from "axios";
-import config from "../../config";
 import CardComponent from "../../components/card";
 import { AppContext } from "../../components/Provider/index";
 
 const Salon = () => {
   const [people, setPeople] = React.useState(0);
-  const [salones, setSalones] = React.useContext(AppContext);
-  
-  console.log(salones);
+  const [context] = React.useContext(AppContext);
+
+  console.log(context);
   return (
     <OrderContentLayout
       selection={
@@ -53,7 +50,7 @@ const Salon = () => {
         </>
       }
       results={
-        !salones ? (
+        !context ? (
           <div className="no-results">
             <img src={iconNoResults} alt="No Results" />
             <h3>
@@ -61,7 +58,7 @@ const Salon = () => {
             </h3>
           </div>
         ) : (
-          salones?.Data.map((salon) => {
+          context?.salones.map((salon) => {
             return (
               <CardComponent
                 key={salon.idSalones}
