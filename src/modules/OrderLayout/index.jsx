@@ -15,6 +15,8 @@ import Sonido from "../sonido/index";
 import Pago from "../pago/index";
 import Button from "../../components/Button/Button";
 import { StepContext } from "../../components/ProviderStep";
+import { useHistory } from "react-router-dom";
+import { useEffect } from "react";
 
 const useQontoStepIconStyles = makeStyles({
   root: {
@@ -173,7 +175,14 @@ export default function CustomizedSteppers() {
       setActiveStep(activeStep + 1);
     }
   };
-
+  const history =useHistory();
+  
+  const hasLogin=localStorage.getItem("login")
+  if(!hasLogin){
+    history.push("/404")
+  }
+  
+  
   return (
     <div className="steps-layout">
       <h2 className="title steps-layout-wrapper">Proceso de orden</h2>

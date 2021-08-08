@@ -10,8 +10,15 @@ import { AppContext } from "../../components/Provider/index";
 import CardComponent from "../../components/card";
 const Sillas = () => {
   const [sillas, setSillas] = React.useState(0);
-  const [context] = React.useContext(AppContext);
-
+  const [context,setContext] = React.useContext(AppContext);
+  
+  const handleOnClickSilla = (silla) =>{
+    setContext({
+      ...context,
+      sillaSelected:silla
+    })
+  }
+  console.log(context);
   return (
     <OrderContentLayout
       selection={
@@ -45,9 +52,14 @@ const Sillas = () => {
           context.sillas.map((silla) => {
             return (
               <CardComponent
+                isSelected={context.sillaSelected?.idSillas === silla.idSillas}
+                onClick={()=>{
+                  handleOnClickSilla(silla)
+                }}
                 image={silla.foto}
                 nameService={silla.tipo}
                 price={silla.precioUnitario}
+                description={silla.descripcion}
                 key={silla.idSillas}
               />
             );

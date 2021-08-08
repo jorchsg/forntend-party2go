@@ -17,8 +17,13 @@ const Salon = () => {
     setContext({
       ...context,
       salonSelected: salon,
+      
     });
+
+    
+    
   };
+  console.log(context.salonSelected)
 
   return (
     <OrderContentLayout
