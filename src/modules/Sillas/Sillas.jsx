@@ -45,7 +45,7 @@ const Sillas = () => {
           context.sillas.map((silla) => {
             return (
               <CardComponent
-                image="https://www.sams.com.mx/images/product-images/img_small/000261710s.jpg"
+                image={silla.foto}
                 nameService={silla.tipo}
                 price={silla.precioUnitario}
                 key={silla.idSillas}

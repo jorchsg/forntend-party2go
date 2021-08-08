@@ -11,10 +11,8 @@ import CardComponent from "../../components/card";
 
 const Mesas = () => {
   const [quantity, setQuantity] = React.useState(0);
-  const [state] = React.useContext(AppContext);
+  const [context] = React.useContext(AppContext);
 
-  //Avoid throw error 'map is not a function'
-  if (state.mesas.Data !== undefined) return;
   return (
     <OrderContentLayout
       selection={
@@ -37,7 +35,7 @@ const Mesas = () => {
         </>
       }
       results={
-        state.mesas.length === 0 || state.mesas.Data ? (
+        context.mesas.length === 0 || context.mesas.Data ? (
           <div className="no-results">
             <img src={iconNoResults} alt="No Results" />
             <h3>
@@ -45,13 +43,13 @@ const Mesas = () => {
             </h3>
           </div>
         ) : (
-          state?.mesas?.map((mesas) => {
+          context?.mesas?.map((mesa) => {
             return (
               <CardComponent
-                image="https://i.pinimg.com/originals/74/0d/3c/740d3cb46defdc6f828a6210709ff954.jpg"
-                nameService={mesas.nombre}
-                price={mesas.precioUnitario}
-                key={mesas.idMesa}
+                image={`${mesa.foto}`}
+                nameService={mesa.nombre}
+                price={mesa.precioUnitario}
+                key={mesa.idMesa}
               />
             );
           })

@@ -7,7 +7,7 @@ const AppProvider = ({ children }) => {
     salones: [],
     mesas: [],
     sillas: [],
-    sonido: [],
+    sonidos: [],
   });
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const AppProvider = ({ children }) => {
           salones: salones_response.data.Data,
           mesas: mesas_response.data,
           sillas: sillas_response.data,
-          sonido: sonido_response.data,
+          sonidos: sonido_response.data,
         });
       } catch (error) {
         console.error(error);

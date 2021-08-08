@@ -7,12 +7,12 @@ import OrderContentLayout from "../OrderContentLayout";
 import "./Salon.scss";
 import CardComponent from "../../components/card";
 import { AppContext } from "../../components/Provider/index";
+import config from "../../config";
 
 const Salon = () => {
   const [people, setPeople] = React.useState(0);
   const [context] = React.useContext(AppContext);
 
-  console.log(context);
   return (
     <OrderContentLayout
       selection={
@@ -62,9 +62,7 @@ const Salon = () => {
             return (
               <CardComponent
                 key={salon.idSalones}
-                image={
-                  "https://i.ibb.co/dbJDXr0/865f3d-e348d669e70547ffb7d8021a2bfc932e-mv2.webp"
-                }
+                image={`${config.imagesURL}/salones/${salon.idSalones}/1.jpg`}
                 nameService={salon.nombre}
                 price={salon.precio}
                 isSelected={false}

@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "../../components/card/index";
-import img from "../../assets/sonido.png";
 import "./style.scss";
 import { AppContext } from "../../components/Provider";
 
@@ -21,7 +20,7 @@ const Sonido = () => {
                 return (
                   <Card
                     isSelected={packSelected === info.idSonido}
-                    image={img}
+                    image={info.foto}
                     nameService={info.nombre}
                     price={info.precioHora}
                     description={info.descripcion}

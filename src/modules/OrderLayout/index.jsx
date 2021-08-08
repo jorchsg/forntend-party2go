@@ -173,7 +173,6 @@ export default function CustomizedSteppers() {
       setActiveStep(activeStep + 1);
     }
   };
-  console.log("Este es el step " + activeStep);
 
   return (
     <div className="steps-layout">
