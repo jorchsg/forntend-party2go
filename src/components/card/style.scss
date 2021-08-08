@@ -11,11 +11,11 @@
   padding: 0%;
   &.active {
     /* shadow/custom */
-    box-shadow: -4px 4px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: -4px 4px 40px rgba(65, 47, 47, 0.7);
   }
-  &.MuiPaper-elevation1 {
-    box-shadow: none;
-  }
+  // &.MuiPaper-elevation1 {
+  //   box-shadow: none;
+  // }
 }
 
 .imgService {

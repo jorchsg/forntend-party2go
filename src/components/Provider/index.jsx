@@ -8,6 +8,10 @@ const AppProvider = ({ children }) => {
     mesas: [],
     sillas: [],
     sonidos: [],
+    salonSelected: undefined,
+    mesaSelected: undefined,
+    sillaSelected: undefined,
+    sonidoSelected: undefined,
   });
 
   useEffect(() => {
@@ -18,6 +22,7 @@ const AppProvider = ({ children }) => {
         const sillas_response = await axios.get(`${config.backendURL}sillas`);
         const sonido_response = await axios.get(`${config.backendURL}sonido`);
         setState({
+          ...state,
           salones: salones_response.data.Data,
           mesas: mesas_response.data,
           sillas: sillas_response.data,

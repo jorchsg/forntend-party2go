@@ -11,7 +11,14 @@ import config from "../../config";
 
 const Salon = () => {
   const [people, setPeople] = React.useState(0);
-  const [context] = React.useContext(AppContext);
+  const [context, setContext] = React.useContext(AppContext);
+
+  const handleOnClickCard = (salon) => {
+    setContext({
+      ...context,
+      salonSelected: salon,
+    });
+  };
 
   return (
     <OrderContentLayout
@@ -61,13 +68,15 @@ const Salon = () => {
           context?.salones.map((salon) => {
             return (
               <CardComponent
+                isSelected={
+                  context.salonSelected?.idSalones === salon.idSalones
+                }
                 key={salon.idSalones}
                 image={`${config.imagesURL}/salones/${salon.idSalones}/1.jpg`}
                 nameService={salon.nombre}
                 price={salon.precio}
-                isSelected={false}
-                onClick={(e) => console.log(e)}
-                description={""}
+                onClick={() => handleOnClickCard(salon)}
+                description={salon.descripcion}
               />
             );
           })
