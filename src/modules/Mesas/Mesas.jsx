@@ -11,8 +11,14 @@ import CardComponent from "../../components/card";
 
 const Mesas = () => {
   const [quantity, setQuantity] = React.useState(0);
-  const [context] = React.useContext(AppContext);
-
+  const [context,setContext] = React.useContext(AppContext);
+  const handleOnClickMesa = (mesa) => {
+    setContext({
+      ...context,
+      mesaSelected:mesa
+    })
+    console.log(context.mesaSelected)
+  }
   return (
     <OrderContentLayout
       selection={
@@ -43,12 +49,15 @@ const Mesas = () => {
             </h3>
           </div>
         ) : (
-          context?.mesas?.map((mesa) => {
+          context.mesas.map((mesa) => {
             return (
               <CardComponent
+                isSelected={context.mesaSelected?.idMesa===mesa.idMesa}
                 image={`${mesa.foto}`}
                 nameService={mesa.nombre}
                 price={mesa.precioUnitario}
+                description={mesa.descripcion}
+                onClick={()=>{handleOnClickMesa(mesa)}}
                 key={mesa.idMesa}
               />
             );

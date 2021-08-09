@@ -16,7 +16,9 @@ import Pago from "../pago/index";
 import Button from "../../components/Button/Button";
 import { StepContext } from "../../components/ProviderStep";
 import { useHistory } from "react-router-dom";
-import { useEffect } from "react";
+
+import { AppContext } from "../../components/Provider";
+import { SelectAllRounded } from "@material-ui/icons";
 
 const useQontoStepIconStyles = makeStyles({
   root: {
@@ -167,19 +169,117 @@ function getStepContent(step) {
 }
 
 export default function CustomizedSteppers() {
+  const hasLogin=localStorage.getItem("login")
+  if(!hasLogin){
+    history.push("/404")
+  }
   const [activeStep, setActiveStep] = React.useContext(StepContext);
   const steps = ["Salones", "Mesas", "Sillas", "Sonido", "Pago"];
+  const [context,setContext]= React.useContext(AppContext);
+  console.log(context)
+  console.log(activeStep)
+  
+  const backStep = () => {
+    if (activeStep > 0) {
+      setActiveStep(activeStep - 1);
+    }
+  };
+  
+  const omitStep = () => {
+    switch (activeStep) {
+      case 0:
+        
+          setContext({
+            ...context,
+            salonSelected:undefined
+          })
+          if (activeStep < 4) {
+            setActiveStep(activeStep + 1);
+          }
+          console.log(context.salonSelected);
+        
+        
+        break;
 
-  const nextStep = () => {
+      case 1:
+        
+          setContext({
+            ...context,
+            mesaSelected:undefined
+          })
+          if (activeStep < 4) {
+            setActiveStep(activeStep + 1);
+          }
+          console.log(context.mesaSelected);
+        
+        
+        break;
+        case 2:
+        
+          setContext({
+            ...context,
+            sillaSelected:undefined
+          })
+          if (activeStep < 4) {
+            setActiveStep(activeStep + 1);
+          }
+          console.log(context.sillaSelected);
+        
+        
+        break;
+        case 3:
+        
+          setContext({
+            ...context,
+            sonidoSelected:undefined
+          })
+          if (activeStep < 4) {
+            setActiveStep(activeStep + 1);
+          }
+          console.log(context.sonidoSelected);
+        
+        
+        break;
+    
+      default:
+        break;
+    }
+
+    
+    
+  };
+  
+  const ContinueStep = () => {
     if (activeStep < 4) {
       setActiveStep(activeStep + 1);
     }
   };
   const history =useHistory();
   
-  const hasLogin=localStorage.getItem("login")
-  if(!hasLogin){
-    history.push("/404")
+  
+  
+  function selected (){
+    switch (activeStep) {
+      case 0:
+        if(!context.salonSelected) return true 
+        else return false
+        break;
+      case 1:
+        if(!context.mesaSelected) return true 
+        else return false
+        break;
+      case 2:
+        if(!context.sillaSelected) return true 
+        else return false
+        break;
+      case 3:
+        if(!context.sonidoSelected) return true 
+        else return false
+        break;
+    
+      default:
+        break;
+    }
   }
   
   
@@ -200,7 +300,20 @@ export default function CustomizedSteppers() {
       </Stepper>
       <div className="steps-content">{getStepContent(activeStep)}</div>
       <div className="steps-actions">
-        <Button type="solid" onClick={nextStep}>
+        <Button type="blank" onClick={backStep}>
+          Retroceder
+        </Button>
+        
+        {
+          activeStep===4 ?(
+            <div></div>
+          ):(
+            <Button type="outline" onClick={omitStep}>
+          Omitir
+        </Button>
+          )
+        }
+        <Button type="solid" onClick={ContinueStep} disabled={selected()}>
           Continuar
         </Button>
       </div>
