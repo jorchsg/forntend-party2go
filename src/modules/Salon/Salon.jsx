@@ -10,21 +10,23 @@ import { AppContext } from "../../components/Provider/index";
 import config from "../../config";
 
 const Salon = () => {
-  const [people, setPeople] = React.useState(0);
   const [context, setContext] = React.useContext(AppContext);
 
   const handleOnClickCard = (salon) => {
     setContext({
       ...context,
       salonSelected: salon,
-      
     });
-
-    
-    
   };
-  console.log(context.salonSelected)
 
+  const setPeople = (amount) => {
+    setContext({
+      ...context,
+      peopleQuantity: amount,
+    });
+  };
+
+  console.log(context.peopleQuantity);
   return (
     <OrderContentLayout
       selection={
@@ -52,9 +54,9 @@ const Salon = () => {
 
           <QuantityForm
             title="Cantidad de personas"
-            minQuantity={1}
+            minQuantity={50}
             setQuantity={setPeople}
-            quantity={people}
+            quantity={context.peopleQuantity}
           />
           <Button minWidth="100%" type="solid">
             Buscar disponibilidad

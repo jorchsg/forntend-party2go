@@ -24,7 +24,8 @@ const QuantityForm = (props) => {
     if (props.minQuantity) {
       props.setQuantity(props.minQuantity);
     }
-  }, [props]);
+    // eslint-disable-next-line
+  }, [props.quantity]);
 
   return (
     <>
