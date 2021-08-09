@@ -32,6 +32,7 @@ const AppProvider = ({ children }) => {
         console.error(error);
       }
     })();
+    // eslint-disable-next-line
   }, []);
 
   return (
