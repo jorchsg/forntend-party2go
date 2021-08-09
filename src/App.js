@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import Login from './modules/login/login';
 import Home from '../src/modules/home/Home';
 import OrderLayout from '../src/modules/OrderLayout';
-import { Switch, Route, } from "react-router-dom";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import DefaultLayout from './modules/DefaultLayout';
 import Page404 from './modules/Page404/index';
 import Loading from './components/Loading/Loading';
@@ -15,27 +15,28 @@ import './index.scss';
 
 function App() {
   return (
-    <Switch>
-      <Suspense fallback={<Loading />}>
+    <Router>
+      <Switch>
 
-        <Route path="/login" exact component={Login} />
+        <Route path="/login" exact={true} component={Login} ></Route>
 
         <DefaultLayout>
-          <Route path="/" exact component={Home}></Route>
-          <Route path="/profile" exact component={ProfileUser}></Route>
-          <Route component={Page404}></Route>
+          <Route path="/" exact={true} component={Home}></Route>
+          <Route path="/profile" exact={true} component={ProfileUser}></Route>
 
           <StepProvider>
             <Provider>
-              <Route path="/order" exact component={OrderLayout}></Route>
+              <Route path="/order" exact={true} component={OrderLayout}></Route>
             </Provider>
           </StepProvider>
 
 
         </DefaultLayout>
+        <Route component={Page404}></Route>
 
-      </Suspense>
-    </Switch>
+      </Switch>
+    </Router>
+
   );
 }
 

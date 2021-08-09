@@ -6,13 +6,14 @@ const ProfileUser = () => {
 
     const [user, setUser] = useState({});
 
-    console.log(user);
-
     const getUserById = async () => {
         const response = await axios.get(`${config.backendURL}users/${'2'}`);
         const result = response.data.usuario;
         setUser(result);
     }
+
+    const UserSession = localStorage.getItem("login");
+    console.log(UserSession);
 
     useEffect(() => {
 
@@ -21,6 +22,8 @@ const ProfileUser = () => {
     }, []);
 
     const { nombre, apellidoPaterno, apellidoMaterno, correo } = user;
+
+    console.log(user);
 
     return (
         <>
