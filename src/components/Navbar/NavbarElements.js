@@ -99,3 +99,105 @@ export const NavBtnLink = styled(Link)`
     color: #010606;
   }
 `;
+
+export const ProfileOptions = styled.div`
+    display: grid;
+    grid-template-columns: 70% auto auto;
+    grid-gap: 14px;
+    justify-items: center;
+    align-items: center;
+
+  @media screen and (max-width: 768px){
+    display: none;
+  }
+`
+
+export const SearchBar = styled.input.attrs({
+  type: 'text'
+})`
+  height: 46px;
+  width: 212px;
+  left: 0px;
+  top: 1px;
+  border-radius: 4px;
+  padding: 12px, 16px, 12px, 16px;
+  border: none;
+  box-sizing: border-box;
+  background-image: url('../../assets/loupe.svg');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  position: relative;
+
+  :focus{
+    border: 1px solid #555;
+    border: none;
+    color: #9696A0;
+  }
+  ::placeholder{
+    color: #9696A0;
+  }
+`
+
+export const DropDownContent = styled("div")`
+  display: none;
+  position: absolute;
+  background-color: #FFF;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
+  a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+    &:hover{
+        background-color: #ddd;
+    }
+  }
+
+`;
+
+export const DropDown = styled("div")`
+  position: relative;
+  display: inline-block;
+
+   &:hover ${DropDownContent}{
+    display: block;
+  }
+
+  @media screen and (max-width: 768px){
+    display: none;
+  }
+
+`;
+
+export const DropBtn = styled("button")`
+  background-color: #2D2D41;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  width: 200px;
+
+  &:hover{background-color: #ddd;}
+`;
+
+
+export const ListItem = styled("a")`
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+
+  &:hover{
+    background-color: #ddd;
+  }
+`;
+
+
+
+
+

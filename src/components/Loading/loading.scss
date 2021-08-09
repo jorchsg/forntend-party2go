@@ -1,0 +1,100 @@
+//Content main
+.content_loading {
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #121311;
+    min-height: 100vh;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  //Icon Loading
+  .content_icon_loading {
+    #loading {
+      width: 90px;
+    }
+  }
+  
+  #circle1 {
+    opacity: 0.85;
+    fill: #33b0b8;
+    transform-origin: center;
+  }
+  #circle2 {
+    opacity: 0.57;
+    fill: none;
+    stroke: #33b0b8;
+    stroke-width: 3;
+    transform-origin: center;
+    transform: scale(0.5);
+    animation: 2s bounce1 infinite;
+  }
+  #circle3 {
+    opacity: 0.4;
+    fill: none;
+    stroke: #33b0b8;
+    stroke-width: 3;
+    enable-background: new;
+    transform-origin: center;
+    transform: scale(1);
+    animation: 2s bounce2 infinite;
+  }
+  #circle4 {
+    opacity: 0.2;
+    fill: none;
+    stroke: #33b0b8;
+    stroke-width: 3;
+    enable-background: new;
+    transform-origin: center;
+    transform: scale(0.2);
+    animation: 2s bounce3 infinite;
+  }
+  
+  @keyframes bounce1 {
+    0% {
+      transform: scale(0.5);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.2);
+    }
+  }
+  
+  @keyframes bounce2 {
+    0% {
+      transform: scale(1);
+      opacity: 0.4;
+    }
+    30% {
+      transform: scale(0.5);
+      opacity: 0.3;
+    }
+    70% {
+      transform: scale(0.3);
+      opacity: 0.2;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.4;
+    }
+  }
+  
+  @keyframes bounce3 {
+    0% {
+      transform: scale(0.2);
+    }
+    40% {
+      transform: scale(0.5);
+    }
+    70% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.2);
+    }
+  }
