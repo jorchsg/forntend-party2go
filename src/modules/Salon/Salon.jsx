@@ -20,26 +20,20 @@ const Salon = () => {
       salonSelected: salon,
     });
   };
-
-  const setPeople = (amount) => {
-    setContext({
-      ...context,
-      peopleQuantity: amount,
-    });
-  };
+  console.log(context.salonSelected);
 
   useEffect(() => {
     (async () => {
-      if (context.dateEvent) {
+      if (context.dateEvent && context.peopleQuantity >= 20) {
         const result = await axios.post(`${config.backendURL}salones/filtro`, {
           fecha: context.dateEvent,
-          capacidad: 300,
+          capacidad: context.peopleQuantity,
         });
         setContext({ ...context, salones: result.data.Data });
       }
     })();
     // eslint-disable-next-line
-  }, [context.dateEvent]);
+  }, [context.dateEvent, context.peopleQuantity]);
 
   return (
     <OrderContentLayout
@@ -72,12 +66,7 @@ const Salon = () => {
             }}
           />
 
-          <QuantityForm
-            title="Cantidad de personas"
-            minQuantity={50}
-            setQuantity={setPeople}
-            quantity={context.peopleQuantity}
-          />
+          <QuantityForm title="Cantidad de personas" />
           <Button minWidth="100%" type="solid">
             Buscar disponibilidad
           </Button>

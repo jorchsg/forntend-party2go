@@ -13,7 +13,9 @@ const AppProvider = ({ children }) => {
     sillaSelected: undefined,
     sonidoSelected: undefined,
     dateEvent: undefined,
-    peopleQuantity: 0,
+    peopleQuantity: 20,
+    mesasQuantity:5,
+    sillasQuantity:20
   });
 
   useEffect(() => {
