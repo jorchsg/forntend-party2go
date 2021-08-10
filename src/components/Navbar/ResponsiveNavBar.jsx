@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import Logo from "../../assets/logo-party2go-white.svg";
 import {
   Nav,
@@ -7,9 +8,31 @@ import {
   NavMenu,
   NavBtn,
   NavBtnLink,
+  ProfileOptions,
+  SearchBar,
+
+  DropDown,
+  DropDownContent,
+  DropBtn,
+
+  ListItem
 } from "./NavbarElements";
 
+
+const UserSession = localStorage.getItem("login");
+
 const ResponsiveNavBar = () => {
+  
+  const history = useHistory();
+
+  const logOut = () => {
+    
+    history.push("/login");
+
+    localStorage.removeItem('login');
+
+  }
+
   return (
     <>
       <Nav>
@@ -28,10 +51,26 @@ const ResponsiveNavBar = () => {
                     <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
 
-        <NavBtn>
-          <NavBtnLink to="/login">Entrar</NavBtnLink>
-          <NavBtnLink to="/login">Crear Cuenta</NavBtnLink>
-        </NavBtn>
+        {UserSession ?
+          <ProfileOptions>
+
+            <SearchBar placeholder="Search"></SearchBar>
+
+            <DropDown>
+              <DropBtn>Johar Terraza</DropBtn>
+              <DropDownContent>
+                <ListItem href="/profile">Profile</ListItem>
+                <ListItem onClick={() => logOut()}>Exit</ListItem>
+              </DropDownContent>
+            </DropDown>
+
+          </ProfileOptions>
+          :
+          <NavBtn>
+            <NavBtnLink to="/login">Entrar</NavBtnLink>
+            <NavBtnLink to="/login">Crear Cuenta</NavBtnLink>
+          </NavBtn>
+        }
       </Nav>
     </>
   );
