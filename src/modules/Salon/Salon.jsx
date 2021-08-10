@@ -8,6 +8,8 @@ import "./Salon.scss";
 import CardComponent from "../../components/card";
 import { AppContext } from "../../components/Provider/index";
 import config from "../../config";
+import { useEffect } from "react";
+import axios from "axios";
 
 const Salon = () => {
   const [context, setContext] = React.useContext(AppContext);
@@ -26,7 +28,19 @@ const Salon = () => {
     });
   };
 
-  console.log(context.peopleQuantity);
+  useEffect(() => {
+    (async () => {
+      if (context.dateEvent) {
+        const result = await axios.post(`${config.backendURL}salones/filtro`, {
+          fecha: context.dateEvent,
+          capacidad: 300,
+        });
+        setContext({ ...context, salones: result.data.Data });
+      }
+    })();
+    // eslint-disable-next-line
+  }, [context.dateEvent]);
+
   return (
     <OrderContentLayout
       selection={
@@ -36,6 +50,12 @@ const Salon = () => {
           </h3>
           <TextField
             className="date-selector"
+            onChange={(e) => {
+              setContext({
+                ...context,
+                dateEvent: e.target.value,
+              });
+            }}
             type="date"
             InputLabelProps={{
               shrink: true,
