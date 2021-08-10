@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from 'react-router-dom';
 import Logo from "../../assets/logo-party2go-white.svg";
+import Salir from "../../assets/salir.svg";
 import {
   Nav,
   NavLink,
@@ -33,6 +34,8 @@ const ResponsiveNavBar = () => {
 
   }
 
+  
+
   return (
     <>
       <Nav>
@@ -57,10 +60,10 @@ const ResponsiveNavBar = () => {
             <SearchBar placeholder="Search"></SearchBar>
 
             <DropDown>
-              <DropBtn>Johar Terraza</DropBtn>
+              <DropBtn>JT</DropBtn>
               <DropDownContent>
-                <ListItem href="/profile">Profile</ListItem>
-                <ListItem onClick={() => logOut()}>Exit</ListItem>
+                <ListItem href="/profile">Mi Perfil</ListItem>
+                <ListItem onClick={() => logOut()}>Salir</ListItem>
               </DropDownContent>
             </DropDown>
 

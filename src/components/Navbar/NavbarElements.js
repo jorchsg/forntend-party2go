@@ -129,10 +129,11 @@ export const SearchBar = styled.input.attrs({
   padding-left: 40px;
   position: relative;
 
-  :focus{
+  &:focus{
     border: 1px solid #555;
     border: none;
     color: #9696A0;
+    outline-width: 0;
   }
   ::placeholder{
     color: #9696A0;
@@ -154,7 +155,7 @@ export const DropDownContent = styled("div")`
     display: block;
 
     &:hover{
-        background-color: #ddd;
+        background-color: #FDE9ED;
     }
   }
 
@@ -180,18 +181,23 @@ export const DropBtn = styled("button")`
   padding: 16px;
   font-size: 16px;
   border: none;
-  width: 200px;
+  /* width: 200px; */
+  border-radius: 50%;
 
   &:hover{background-color: #ddd;}
 `;
 
 
 export const ListItem = styled("a")`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   cursor: pointer;
+  font-size: 14px;
 
   &:hover{
     background-color: #ddd;
