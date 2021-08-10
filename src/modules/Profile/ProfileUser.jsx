@@ -1,32 +1,22 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
-import config from '../../config';
+import React, { useEffect, useState, useContext } from 'react'
+import { UserContext } from '../../context/UserProvider';
 
 const ProfileUser = () => {
 
-    const [user, setUser] = useState({});
-
-    const getUserById = async () => {
-        const response = await axios.get(`${config.backendURL}users/${'2'}`);
-        const result = response.data.usuario;
-        setUser(result);
-    }
+    const [user] = useContext(UserContext);
+    console.log(user);
 
     const UserSession = localStorage.getItem("login");
     console.log(UserSession);
 
-    useEffect(() => {
+    if (!user) return <></>;
 
-        getUserById();
-
-    }, []);
 
     const { nombre, apellidoPaterno, apellidoMaterno, correo } = user;
 
-    console.log(user);
-
     return (
         <>
+            <h1>Hello </h1>
             <h1>{`Nombre Completo: ${nombre} ${apellidoPaterno} ${apellidoMaterno}`}</h1>
             <p>{`Correo Electrónico: ${correo}`}</p>
         </>
