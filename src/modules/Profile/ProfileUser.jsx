@@ -45,118 +45,118 @@ const ProfileUser = () => {
                 </div>
                 <form className={classes.root} noValidate autoComplete="off">
                     <Grid container spacing={12}>
-                    <div>
-                        <h4>Datos Personales</h4>
-                        <TextField
-                            id="outlined-read-only-input"
-                            label="Nombre"
-                            defaultValue="Hello World"
-                            InputProps={{ readOnly: true, }}
-                            variant="outlined"
-                            value={nombre}
-                        />
-                        <TextField
-                            id="outlined-read-only-input"
-                            label="Apellido Paterno"
-                            defaultValue="Hello World"
-                            InputProps={{ readOnly: true, }}
-                            variant="outlined"
-                            value={apellidoPaterno}
-                        />
-                        <TextField
-                            id="outlined-read-only-input"
-                            label="Apellido Materno"
-                            defaultValue="Hello World"
-                            InputProps={{readOnly: true,}}
-                            variant="outlined"
-                            value={apellidoMaterno}
-                        />
-                    </div>
+                        <Grid item xs={12}>
+                            <h4>Datos Personales</h4>
+                            <TextField
+                                id="outlined-read-only-input"
+                                label="Nombre"
+                                defaultValue="Nombre"
+                                InputProps={{ readOnly: true, }}
+                                variant="outlined"
+                                value={nombre}
+                            />
+                            <TextField
+                                id="outlined-read-only-input"
+                                label="Apellido Paterno"
+                                defaultValue="Apellido"
+                                InputProps={{ readOnly: true, }}
+                                variant="outlined"
+                                value={apellidoPaterno}
+                            />
+                            <TextField
+                                id="outlined-read-only-input"
+                                label="Apellido Materno"
+                                defaultValue="Apellido Materno"
+                                InputProps={{readOnly: true,}}
+                                variant="outlined"
+                                value={apellidoMaterno}
+                            />
+                        </Grid>
 
-                    <div>
-                        <h4>Información de Contacto</h4>
-                        <TextField
-                            id="outlined-read-only-input"
-                            label="Correo Electrónico"
-                            defaultValue="Hello World"
-                            InputProps={{ readOnly: true, }}
-                            variant="outlined"
-                            value={correo}
-                        />
-                        <TextField
-                            id="outlined-read-only-input"
-                            label="Teléfono"
-                            defaultValue="Hello World"
-                            InputProps={{ readOnly: true, }}
-                            variant="outlined"
-                            value={telefono}
-                        />
-                    </div>
+                        <Grid item xs={12}>
+                            <h4>Información de Contacto</h4>
+                            <TextField
+                                id="outlined-read-only-input"
+                                label="Correo Electrónico"
+                                defaultValue="Correo Electrónico"
+                                InputProps={{ readOnly: true, }}
+                                variant="outlined"
+                                value={correo}
+                            />
+                            <TextField
+                                id="outlined-read-only-input"
+                                label="Teléfono"
+                                defaultValue="Hello World"
+                                InputProps={{ readOnly: true, }}
+                                variant="outlined"
+                                value={telefono}
+                            />
+                        </Grid>
 
-                    <div>
-                        <h4>Dirección</h4>
-                        <TextField
-                            id="outlined-read-only-input"
-                            label="Calle"
-                            defaultValue="Hello World"
-                            InputProps={{ readOnly: true, }}
-                            variant="outlined"
-                            value={calle}
-                        />
-                        <TextField
-                            id="outlined-read-only-input"
-                            label="Numéro Exterior"
-                            defaultValue="Hello World"
-                            InputProps={{ readOnly: true, }}
-                            variant="outlined"
-                            value={numExterior}
-                        />
-                        <TextField
-                            id="outlined-read-only-input"
-                            label="Numéro Interior"
-                            defaultValue="Hello World"
-                            InputProps={{ readOnly: true, }}
-                            variant="outlined"
-                            value={numInterior}
-                        />
-                    </div>
+                        <Grid item xs={12}>
+                            <h4>Dirección</h4>
+                            <TextField
+                                id="outlined-read-only-input"
+                                label="Calle"
+                                defaultValue="Hello World"
+                                InputProps={{ readOnly: true, }}
+                                variant="outlined"
+                                value={calle}
+                            />
+                            <TextField
+                                id="outlined-read-only-input"
+                                label="Numéro Exterior"
+                                defaultValue="Hello World"
+                                InputProps={{ readOnly: true, }}
+                                variant="outlined"
+                                value={numExterior}
+                            />
+                            <TextField
+                                id="outlined-read-only-input"
+                                label="Numéro Interior"
+                                defaultValue="Hello World"
+                                InputProps={{ readOnly: true, }}
+                                variant="outlined"
+                                value={numInterior}
+                            />
+                        </Grid>
 
-                    <div>
-                        <TextField
-                            id="outlined-read-only-input"
-                            label="Colonia"
-                            defaultValue="Hello World"
-                            InputProps={{ readOnly: true, }}
-                            variant="outlined"
-                            value={colonia}
-                        />
-                        <TextField
-                            id="outlined-read-only-input"
-                            label="Ciudad"
-                            defaultValue="Hello World"
-                            InputProps={{ readOnly: true, }}
-                            variant="outlined"
-                            value={ciudad}
-                        />
-                        <TextField
-                            id="outlined-read-only-input"
-                            label="Estado"
-                            defaultValue="Hello World"
-                            InputProps={{ readOnly: true, }}
-                            variant="outlined"
-                            value={estado}
-                        />
-                    </div>
-                    <div>
-                        <TextField
-                            id="outlined-read-only-input"
-                            label="Código Postal"
-                            defaultValue="Hello World"
-                            InputProps={{ readOnly: true, }}
-                            variant="outlined"
-                            value={cp}
-                        />
-                        </div>
+                        <Grid item xs={12}>
+                            <TextField
+                                id="outlined-read-only-input"
+                                label="Colonia"
+                                defaultValue="Hello World"
+                                InputProps={{ readOnly: true, }}
+                                variant="outlined"
+                                value={colonia}
+                            />
+                            <TextField
+                                id="outlined-read-only-input"
+                                label="Ciudad"
+                                defaultValue="Hello World"
+                                InputProps={{ readOnly: true, }}
+                                variant="outlined"
+                                value={ciudad}
+                            />
+                            <TextField
+                                id="outlined-read-only-input"
+                                label="Estado"
+                                defaultValue="Hello World"
+                                InputProps={{ readOnly: true, }}
+                                variant="outlined"
+                                value={estado}
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                id="outlined-read-only-input"
+                                label="Código Postal"
+                                defaultValue="Hello World"
+                                InputProps={{ readOnly: true, }}
+                                variant="outlined"
+                                value={cp}
+                            />
+                        </Grid>
                     </Grid>
                 </form>
             </Container>
