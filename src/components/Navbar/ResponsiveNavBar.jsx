@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Logo from "../../assets/logo-party2go-white.svg";
 import {
   Nav,
@@ -15,28 +15,23 @@ import {
   DropDownContent,
   DropBtn,
 
-  DropDownHeader,
-  DropDownListContainer,
-  DropDownList,
   ListItem
 } from "./NavbarElements";
 
-const options = ["Mi Perfil", "Salir"];
 
 const UserSession = localStorage.getItem("login");
 
 const ResponsiveNavBar = () => {
+  
+  const history = useHistory();
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
+  const logOut = () => {
+    
+    history.push("/login");
 
-  const toggling = () => setIsOpen(!isOpen);
+    localStorage.removeItem('login');
 
-  const onOptionClicked = value => () => {
-    setSelectedOption(value);
-    setIsOpen(false);
-    console.log(selectedOption);
-  };
+  }
 
   return (
     <>
@@ -62,10 +57,10 @@ const ResponsiveNavBar = () => {
             <SearchBar placeholder="Search"></SearchBar>
 
             <DropDown>
-              <DropBtn onClick={toggling}>Johar Terraza</DropBtn>
+              <DropBtn>Johar Terraza</DropBtn>
               <DropDownContent>
                 <ListItem href="/profile">Profile</ListItem>
-                <ListItem href="/">Exit</ListItem>
+                <ListItem onClick={() => logOut()}>Exit</ListItem>
               </DropDownContent>
             </DropDown>
 
