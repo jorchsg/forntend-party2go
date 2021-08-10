@@ -4,24 +4,14 @@ import config from "../config";
 
 const UserProvider = ({ children }) => {
 
-    const [user, setUser] = useState('randomtest');
-
-    const getUserById = async () => {
-        const response = await axios.get(`${config.backendURL}users/${'2'}`);
-        const result = response.data.usuario;
-        // console.log(result);
-        setUser(result);
-    }
+    const [user, setUser] = useState({});
 
     useEffect(() => {
-
-        // getUserById();
 
         (async () => {
             try {
                 const response = await axios.get(`${config.backendURL}users/${'2'}`);
                 const result = response.data.usuario;
-                // console.log(result);
                 setUser(result);
             } catch (error) {
                 console.log(error);
