@@ -14,8 +14,8 @@ const AppProvider = ({ children }) => {
     sonidoSelected: undefined,
     dateEvent: undefined,
     peopleQuantity: 20,
-    mesasQuantity:5,
-    sillasQuantity:20
+    mesasQuantity: 5,
+    sillasQuantity: 20,
   });
 
   useEffect(() => {
@@ -38,6 +38,19 @@ const AppProvider = ({ children }) => {
     })();
     // eslint-disable-next-line
   }, []);
+
+  useEffect(() => {
+    (async () => {
+      if (state.dateEvent && state.peopleQuantity >= 20) {
+        const result = await axios.post(`${config.backendURL}salones/filtro`, {
+          fecha: state.dateEvent,
+          capacidad: state.peopleQuantity,
+        });
+        setState({ ...state, salones: result.data.Data });
+      }
+    })();
+    // eslint-disable-next-line
+  }, [state.dateEvent, state.peopleQuantity]);
 
   return (
     <AppContext.Provider value={[state, setState]}>

@@ -8,8 +8,6 @@ import "./Salon.scss";
 import CardComponent from "../../components/card";
 import { AppContext } from "../../components/Provider/index";
 import config from "../../config";
-import { useEffect } from "react";
-import axios from "axios";
 
 const Salon = () => {
   const [context, setContext] = React.useContext(AppContext);
@@ -20,20 +18,6 @@ const Salon = () => {
       salonSelected: salon,
     });
   };
-  console.log(context.salonSelected);
-
-  useEffect(() => {
-    (async () => {
-      if (context.dateEvent && context.peopleQuantity >= 20) {
-        const result = await axios.post(`${config.backendURL}salones/filtro`, {
-          fecha: context.dateEvent,
-          capacidad: context.peopleQuantity,
-        });
-        setContext({ ...context, salones: result.data.Data });
-      }
-    })();
-    // eslint-disable-next-line
-  }, [context.dateEvent, context.peopleQuantity]);
 
   return (
     <OrderContentLayout
