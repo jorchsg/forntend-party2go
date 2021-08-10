@@ -4,12 +4,38 @@ import oxxoLogo from "../../assets/oxxo-logo.png";
 import paypalLogo from "../../assets/paypal.png";
 import pagoLogo from "../../assets/pago-logo.png";
 import "../pago/style.scss";
+import { UserContext } from "../../context/UserProvider";
+import { AppContext } from "../../components/Provider";
 
 const Pago = () => {
   const [paymentSelected, setPaymentSelected] = useState(undefined);
   // const [editingInfo, setEditingInfo] = useState(false);
   // const [editingAddr, setEditingAddr] = useState(false);
+  const [context]=React.useContext(AppContext);
+  const [user]=React.useContext(UserContext);
 
+  const getTotal = () => {
+    let total = 0;
+    //Salon
+    if (context.salonSelected) {
+      total = total + parseFloat(context.salonSelected.precio);
+    }
+    //Mesas
+    if (context.mesaSelected) {
+      total = total + parseFloat(context.mesaSelected.precioUnitario * context.mesasQuantity);
+    }
+    //Mesas
+    if (context.sillaSelected) {
+      total = total + parseFloat(context.sillaSelected.precioUnitario * context.sillasQuantity);
+    }
+    //Sonido
+    if (context.sonidoSelected) {
+      total = total + parseFloat(context.sonidoSelected.precioHora);
+    }
+    return total;
+  };
+
+  
   return (
     <>
       <div className="pago-container">
@@ -43,23 +69,29 @@ const Pago = () => {
             <h3 className="title">Confirma tus datos</h3>
             <div className="data">
               <div className="data-info">
-                <p>Nombre completo</p>
-                <p>Telefono</p>
-                <p>correo@gmail.com</p>
+                <p>{user.nombre +" "+ user.apellidoPaterno+" "+user.apellidoMaterno}</p>
+                <p>{user.telefono}</p>
+                <p>{user.correo}</p>
               </div>
               <div className="editar">
-                <span href="#Edit">Editar</span>
+                <a href="#Edit">Editar</a>
               </div>
             </div>
           </div>
           <div className="confirm-direction">
-            <h3 className="title">Confirma tus direccion</h3>
+            <h3 className="title">Direccion del Evento</h3>
             <div className="direction">
               <div className="direction-info">
+                {!context.salonSelected ?
+
                 <p>
-                  Av Azucenas 14, 22225, Valle de las Flores, Tijuana, Baja
-                  California, México.
+                  {user.calle+" "+ user.numInterior+","+" "+user.numExterior+","+" "+user.colonia+","+" "+ user.cp +","+" "+ user.ciudad+","+" "+user.estado+","+" "+"México"}
                 </p>
+                :
+                <p>
+                  {context.salonSelected.direccionSalon}
+                </p>
+                }
               </div>
               <div className="editar">
                 <a href="#Edit">Editar</a>
@@ -78,25 +110,46 @@ const Pago = () => {
             <div className="list">
               <div className="concepto">
                 <p>Salon</p>
-                <p>Precio</p>
+                {
+                  !context.salonSelected ?
+                  <p>{"$"+"0"}</p>
+                  :
+                  <p>{"$"+context.salonSelected.precio}</p>
+                }
+                
               </div>
               <div className="concepto">
-                <p>Mesa</p>
-                <p>Precio</p>
+                <p>Mesas</p>
+                {
+                  !context.mesaSelected ?
+                  <p>{"$"+"0"}</p>
+                  :
+                  <p>{"$"+(context.mesaSelected.precioUnitario * context.mesasQuantity)}</p>
+                }
               </div>
               <div className="concepto">
-                <p>Silla</p>
-                <p>Precio</p>
+                <p>Sillas</p>
+                {
+                  !context.sillaSelected ?
+                  <p>{"$"+"0"}</p>
+                  :
+                  <p>{"$"+(context.sillaSelected.precioUnitario * context.sillasQuantity)}</p>
+                }
               </div>
               <div className="concepto">
                 <p>Sonido</p>
-                <p>Precio</p>
+                {
+                  !context.sonidoSelected ?
+                  <p>{"$"+"0"}</p>
+                  :
+                  <p>{"$"+context.sonidoSelected.precioHora}</p>
+                }
               </div>
             </div>
           </div>
           <div className="conceptoTotal">
-            <h5>Sonido</h5>
-            <h4>Precio</h4>
+            <h5>Total</h5>
+            <h4>{"$"+getTotal()}</h4>
           </div>
           <div className="confirm-button">
             <Button>Confirmar solicitud</Button>

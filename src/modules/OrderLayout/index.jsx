@@ -248,7 +248,7 @@ export default function CustomizedSteppers() {
   function selected() {
     switch (activeStep) {
       case 0:
-        if (!context.salonSelected) return true;
+        if (!context.salonSelected || !context.dateEvent) return true;
         else return false;
 
       case 1:
@@ -266,6 +266,12 @@ export default function CustomizedSteppers() {
       default:
         break;
     }
+  }
+  function omitStepThree(){
+    if(activeStep==3){
+      if(context.salonSelected==undefined&&context.mesaSelected==undefined&&context.sillaSelected==undefined)return true
+        else return false
+  }
   }
 
   return (
@@ -292,13 +298,19 @@ export default function CustomizedSteppers() {
         {activeStep === 4 ? (
           <div></div>
         ) : (
-          <Button type="outline" onClick={omitStep}>
+          <Button type="outline" onClick={omitStep} disabled={omitStepThree()}>
             Omitir
           </Button>
         )}
+        {
+        activeStep === 4 ? (
+          <div></div>
+        ) : (
         <Button type="solid" onClick={ContinueStep} disabled={selected()}>
           Continuar
         </Button>
+        )
+        }
       </div>
     </div>
   );

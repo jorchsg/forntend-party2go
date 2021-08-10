@@ -1,6 +1,6 @@
 import React from "react";
 import QuantityForm from "../../components/QuantityForm/QuantityForm";
-import Button from "../../components/Button/Button";
+
 import iconNoResults from "../../assets/icon-no-results.png";
 import TextField from "@material-ui/core/TextField";
 import OrderContentLayout from "../OrderContentLayout";
@@ -39,21 +39,8 @@ const Salon = () => {
               shrink: true,
             }}
           />
-          <TextField
-            className="hour-selector"
-            type="time"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            inputProps={{
-              step: 300, // 5 min
-            }}
-          />
-
           <QuantityForm title="Cantidad de personas" />
-          <Button minWidth="100%" type="solid">
-            Buscar disponibilidad
-          </Button>
+         
         </>
       }
       results={
