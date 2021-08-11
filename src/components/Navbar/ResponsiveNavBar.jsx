@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { useHistory } from 'react-router-dom';
 import Logo from "../../assets/logo-party2go-white.svg";
 import Salir from "../../assets/salir.svg";
+import { AppContext } from "../Provider/index";
 import {
   Nav,
   NavLink,
@@ -14,13 +15,30 @@ import {
   DropDown,
   DropDownContent,
   DropBtn,
-  ListItem,
   Anchor,
+
+  ListItem,
+  Results
 } from "./NavbarElements";
 
 const UserSession = localStorage.getItem("login");
 
 const ResponsiveNavBar = () => {
+
+  const [allContext] = useContext(AppContext);
+
+  const [filtrados, setFiltrados] = useState([]);
+
+  const [isFocus, setIsFocus] = useState(false);
+
+  const filtrarSalones = (value => {
+    setFiltrados(allContext.salones.filter(
+      item => item.nombre.toLowerCase().search(value.toLowerCase()) !== -1
+    ));
+  });
+
+  console.log('Salones Filtados', filtrados);
+
   const history = useHistory();
 
   const logOut = () => {
@@ -49,7 +67,26 @@ const ResponsiveNavBar = () => {
 
         {UserSession ? (
           <ProfileOptions>
-            <SearchBar placeholder="Search"></SearchBar>
+
+            <SearchBar
+              placeholder="Search"
+              onChange={(e) => filtrarSalones(e.target.value)}
+              onFocus={() => setIsFocus(true)}
+              onBlur={(() => setIsFocus(false))}
+            >
+            </SearchBar>
+
+            <Results
+              style={{ display: isFocus ? 'block' : 'none' }}
+            >
+              <>
+                {
+                  filtrados.map((ele =>
+                    <p>{ele.nombre}</p>
+                  ))
+                }
+              </>
+            </Results>
 
             <DropDown>
               <DropBtn>JT</DropBtn>

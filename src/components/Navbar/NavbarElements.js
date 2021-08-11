@@ -227,3 +227,37 @@ export const ListItem = styled("a")`
     background-color: #ddd;
   }
 `;
+
+export const Results = styled('div')`
+  background-color: #FFFFFF;
+  height: max-content;
+  width: 264px;
+  right: 300px;
+  top: 90px;
+  border-radius: 4px;
+  z-index: 999;
+  position: absolute;
+  display: none;
+  padding: 16px;
+
+  p{
+    padding: 8px 6px;
+    color: #2D2D41;
+    margin-bottom: 8px;
+    cursor: pointer;
+
+    :last-of-type{
+      margin: 0;
+    }
+
+    &:hover{
+       background-color: #EAEAEC;
+       color: #2D2D41;
+       opacity: .9;
+    }
+  }
+`;
+
+
+
+
