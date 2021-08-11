@@ -232,7 +232,6 @@ export const Results = styled('div')`
   background-color: #FFFFFF;
   height: max-content;
   width: 264px;
-  right: 300px;
   top: 90px;
   border-radius: 4px;
   z-index: 999;
