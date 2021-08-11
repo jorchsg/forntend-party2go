@@ -1,12 +1,12 @@
 import React from "react";
 import "./style.scss";
 // Components
-
+import DefaultLayout from "../DefaultLayout";
 import img404 from "../../assets/page404.png";
 
 const Page404 = () => {
   return (
-    <>
+    <DefaultLayout>
       <div className="body404">
         <div className="message404">
           <h1>Parece que se acabó la fiesta por aquí :(</h1>
@@ -20,7 +20,7 @@ const Page404 = () => {
 
         <img src={img404} className="image404" alt="imagen404" />
       </div>
-    </>
+    </DefaultLayout>
   );
 };
 

@@ -16,7 +16,7 @@ import Pago from "../pago/index";
 import Button from "../../components/Button/Button";
 import { StepContext } from "../../components/ProviderStep";
 import { useHistory } from "react-router-dom";
-
+import DefaultLayout from "../DefaultLayout";
 import { AppContext } from "../../components/Provider";
 
 const useQontoStepIconStyles = makeStyles({
@@ -267,51 +267,62 @@ export default function CustomizedSteppers() {
         break;
     }
   }
-  function omitStepThree(){
-    if(activeStep==3){
-      if(context.salonSelected==undefined&&context.mesaSelected==undefined&&context.sillaSelected==undefined)return true
-        else return false
-  }
+  function omitStepThree() {
+    if (activeStep == 3) {
+      if (
+        context.salonSelected == undefined &&
+        context.mesaSelected == undefined &&
+        context.sillaSelected == undefined
+      )
+        return true;
+      else return false;
+    }
   }
 
   return (
-    <div className="steps-layout">
-      <h2 className="title steps-layout-wrapper">Proceso de orden</h2>
-      <Stepper
-        className="steps-layout-wrapper"
-        alternativeLabel
-        activeStep={activeStep}
-        connector={<ColorlibConnector />}
-      >
-        {steps.map((label) => (
-          <Step key={label}>
-            <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
-          </Step>
-        ))}
-      </Stepper>
-      <div className="steps-content">{getStepContent(activeStep)}</div>
-      <div className="steps-actions">
-        <Button type="blank" onClick={backStep}>
-          Retroceder
-        </Button>
-
-        {activeStep === 4 ? (
-          <div></div>
-        ) : (
-          <Button type="outline" onClick={omitStep} disabled={omitStepThree()}>
-            Omitir
+    <DefaultLayout>
+      <div className="steps-layout">
+        <h2 className="title steps-layout-wrapper">Proceso de orden</h2>
+        <Stepper
+          className="steps-layout-wrapper"
+          alternativeLabel
+          activeStep={activeStep}
+          connector={<ColorlibConnector />}
+        >
+          {steps.map((label) => (
+            <Step key={label}>
+              <StepLabel StepIconComponent={ColorlibStepIcon}>
+                {label}
+              </StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+        <div className="steps-content">{getStepContent(activeStep)}</div>
+        <div className="steps-actions">
+          <Button type="blank" onClick={backStep}>
+            Retroceder
           </Button>
-        )}
-        {
-        activeStep === 4 ? (
-          <div></div>
-        ) : (
-        <Button type="solid" onClick={ContinueStep} disabled={selected()}>
-          Continuar
-        </Button>
-        )
-        }
+
+          {activeStep === 4 ? (
+            <div></div>
+          ) : (
+            <Button
+              type="outline"
+              onClick={omitStep}
+              disabled={omitStepThree()}
+            >
+              Omitir
+            </Button>
+          )}
+          {activeStep === 4 ? (
+            <div></div>
+          ) : (
+            <Button type="solid" onClick={ContinueStep} disabled={selected()}>
+              Continuar
+            </Button>
+          )}
+        </div>
       </div>
-    </div>
+    </DefaultLayout>
   );
 }
