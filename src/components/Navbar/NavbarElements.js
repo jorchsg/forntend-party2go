@@ -1,10 +1,14 @@
-import { FaBars } from 'react-icons/fa';
-import { NavLink as Link } from 'react-router-dom';
-import styled from 'styled-components';
-
+import { FaBars } from "react-icons/fa";
+import { NavLink as Link } from "react-router-dom";
+import styled from "styled-components";
 
 export const Nav = styled.nav`
-  background: linear-gradient(142.75deg, #ED5026 -2.2%, #F02748 50.89%, #F71694 107.64%);
+  background: linear-gradient(
+    142.75deg,
+    #ed5026 -2.2%,
+    #f02748 50.89%,
+    #f71694 107.64%
+  );
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -26,13 +30,35 @@ export const NavLink = styled(Link)`
     color: #fff;
     font-weight: bold;
   }
-  &:hover{
+  &:hover {
     color: yellow;
     opacity: 0.7;
   }
-  img{
+  img {
     @media screen and (min-width: 992px) {
-        display: none;
+      display: none;
+    }
+  }
+`;
+export const Anchor = styled.a`
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+  &.active {
+    color: #fff;
+    font-weight: bold;
+  }
+  &:hover {
+    color: yellow;
+    opacity: 0.7;
+  }
+  img {
+    @media screen and (min-width: 992px) {
+      display: none;
     }
   }
 `;
@@ -77,11 +103,10 @@ export const NavBtn = styled.nav`
   }
 `;
 
-
 export const NavBtnLink = styled(Link)`
   border-radius: 4px;
-  background: #2D2D41;
-  :first-child{
+  background: #2d2d41;
+  :first-child {
     margin-right: 18px;
   }
   padding: 10px 22px;
@@ -101,19 +126,19 @@ export const NavBtnLink = styled(Link)`
 `;
 
 export const ProfileOptions = styled.div`
-    display: grid;
-    grid-template-columns: 70% auto auto;
-    grid-gap: 14px;
-    justify-items: center;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 70% auto auto;
+  grid-gap: 14px;
+  justify-items: center;
+  align-items: center;
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     display: none;
   }
-`
+`;
 
 export const SearchBar = styled.input.attrs({
-  type: 'text'
+  type: "text",
 })`
   height: 46px;
   width: 212px;
@@ -123,60 +148,58 @@ export const SearchBar = styled.input.attrs({
   padding: 12px, 16px, 12px, 16px;
   border: none;
   box-sizing: border-box;
-  background-image: url('../../assets/loupe.svg');
+  background-image: url("../../assets/loupe.svg");
   background-position: 10px 10px;
   background-repeat: no-repeat;
   padding-left: 40px;
   position: relative;
 
-  &:focus{
+  &:focus {
     border: 1px solid #555;
     border: none;
-    color: #9696A0;
+    color: #9696a0;
     outline-width: 0;
   }
-  ::placeholder{
-    color: #9696A0;
+  ::placeholder {
+    color: #9696a0;
   }
-`
+`;
 
 export const DropDownContent = styled("div")`
   display: none;
   position: absolute;
-  background-color: #FFF;
+  background-color: #fff;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 
-  a{
+  a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 
-    &:hover{
-        background-color: #FDE9ED;
+    &:hover {
+      background-color: #fde9ed;
     }
   }
-
 `;
 
 export const DropDown = styled("div")`
   position: relative;
   display: inline-block;
 
-   &:hover ${DropDownContent}{
+  &:hover ${DropDownContent} {
     display: block;
   }
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     display: none;
   }
-
 `;
 
 export const DropBtn = styled("button")`
-  background-color: #2D2D41;
+  background-color: #2d2d41;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -184,9 +207,10 @@ export const DropBtn = styled("button")`
   /* width: 200px; */
   border-radius: 50%;
 
-  &:hover{background-color: #ddd;}
+  &:hover {
+    background-color: #ddd;
+  }
 `;
-
 
 export const ListItem = styled("a")`
   display: flex;
@@ -199,12 +223,7 @@ export const ListItem = styled("a")`
   cursor: pointer;
   font-size: 14px;
 
-  &:hover{
+  &:hover {
     background-color: #ddd;
   }
 `;
-
-
-
-
-

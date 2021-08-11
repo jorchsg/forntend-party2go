@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import Logo from "../../assets/logo-party2go-white.svg";
 import Salir from "../../assets/salir.svg";
 import {
@@ -11,30 +11,23 @@ import {
   NavBtnLink,
   ProfileOptions,
   SearchBar,
-
   DropDown,
   DropDownContent,
   DropBtn,
-
-  ListItem
+  ListItem,
+  Anchor,
 } from "./NavbarElements";
-
 
 const UserSession = localStorage.getItem("login");
 
 const ResponsiveNavBar = () => {
-  
   const history = useHistory();
 
   const logOut = () => {
-    
     history.push("/login");
 
-    localStorage.removeItem('login');
-
-  }
-
-  
+    localStorage.removeItem("login");
+  };
 
   return (
     <>
@@ -47,16 +40,15 @@ const ResponsiveNavBar = () => {
           <NavLink to="/" activeStyle>
             Home
           </NavLink>
-          <NavLink to="/">Servicios</NavLink>
-          <NavLink to="/">Empieza Aquí</NavLink>
-          <NavLink to="/">Contáctanos</NavLink>
+          <Anchor href="#services">Servicios</Anchor>
+          <Anchor href="#start">Empieza Aquí</Anchor>
+          <Anchor href="#contact">Contáctanos</Anchor>
           {/* Second Nav
                     <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
 
-        {UserSession ?
+        {UserSession ? (
           <ProfileOptions>
-
             <SearchBar placeholder="Search"></SearchBar>
 
             <DropDown>
@@ -66,14 +58,13 @@ const ResponsiveNavBar = () => {
                 <ListItem onClick={() => logOut()}>Salir</ListItem>
               </DropDownContent>
             </DropDown>
-
           </ProfileOptions>
-          :
+        ) : (
           <NavBtn>
             <NavBtnLink to="/login">Entrar</NavBtnLink>
             <NavBtnLink to="/login">Crear Cuenta</NavBtnLink>
           </NavBtn>
-        }
+        )}
       </Nav>
     </>
   );
