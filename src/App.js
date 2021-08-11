@@ -22,20 +22,20 @@ function App() {
 
         <Route path="/login" exact={true} component={Login} ></Route>
 
-          <UserProvider>
-            <DefaultLayout>
-            <Route path="/" exact={true} component={Home}></Route>
-            
+        <StepProvider>
+          <Provider>
+            <UserProvider>
+              <DefaultLayout>
+                <Route path="/" exact={true} component={Home}></Route>
+
                 <Route path="/profile" exact={true} component={ProfileUser}></Route>
 
-                <StepProvider>
-                  <Provider>
-                    <Route path="/order" exact={true} component={OrderLayout}></Route>
-                  </Provider>
-                </StepProvider>
+                <Route path="/order" exact={true} component={OrderLayout}></Route>
 
-            </DefaultLayout>
-          </UserProvider>
+              </DefaultLayout>
+            </UserProvider>
+          </Provider>
+        </StepProvider>
           
         <Route component={Page404}></Route>
         

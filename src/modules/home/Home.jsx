@@ -9,6 +9,7 @@ import iconSilla from '../../../src/assets/icon-services-sillas.svg'
 import iconMesa from '../../../src/assets/icon-services-mesas.svg'
 import iconSonido from '../../../src/assets/icon-services-sound.svg'
 
+
 // Styles
 import './home.scss'
 
@@ -16,7 +17,6 @@ const Home = () => {
 
     return (
         <>
-           
 
             <div className="hero">
                 <div className="container">
