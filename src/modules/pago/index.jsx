@@ -6,6 +6,8 @@ import pagoLogo from "../../assets/pago-logo.png";
 import "../pago/style.scss";
 import { UserContext } from "../../context/UserProvider";
 import { AppContext } from "../../components/Provider";
+import jsPDF from "jspdf";
+
 
 const Pago = () => {
   const [paymentSelected, setPaymentSelected] = useState(undefined);
@@ -14,6 +16,7 @@ const Pago = () => {
   const [context]=React.useContext(AppContext);
   const [user]=React.useContext(UserContext);
 
+ 
   const getTotal = () => {
     let total = 0;
     //Salon
@@ -32,9 +35,79 @@ const Pago = () => {
     if (context.sonidoSelected) {
       total = total + parseFloat(context.sonidoSelected.precioHora);
     }
-    return total;
+    return total
   };
 
+  
+  
+  function generateRecibe  () {
+    const pagoTotal=getTotal();
+    console.log(pagoTotal)
+    if (paymentSelected=="oxxo"){
+      const doc =jsPDF('p','pt');
+
+      doc.text(170,80,'Recibo de pago con referencia OXXO')
+      doc.setFont('courier');
+
+      //set the font type
+   
+      doc.addImage("https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Oxxo_Logo.svg/1200px-Oxxo_Logo.svg.png",200,90,200,100)
+
+      doc.text(120,250,'Nombre: '+ user.nombre +" "+ user.apellidoPaterno+" "+user.apellidoMaterno)
+      doc.text(120,270,'Datos de compra')
+      doc.text(120,290,!context.salonSelected?('Salon: '+" "+"$"+"0"):('Salon: '+" "+"$"+context.salonSelected.precio))
+      doc.text(120,310,!context.mesaSelected?('Mesas: '+" "+"$"+"0"):('Mesas: '+" "+"$"+(context.mesaSelected.precioUnitario * context.mesasQuantity)))
+      doc.text(120,330,!context.sillaSelected?('Sillas: '+"$"+"0"):('Sillas: '+"$"+(context.sillaSelected.precioUnitario * context.sillasQuantity)))
+      doc.text(120,350,!context.sonidoSelected?('Sonido: '+"$"+"0"):('Sonido: '+"$"+context.sonidoSelected.precioHora))
+      doc.text(120,365,"--------------------------------------")
+      doc.text(350,380,"Total: "+"$"+pagoTotal)
+      doc.text(120,420,"Numero de referencia de pago:")
+      doc.text(120,440,"13213543510313121321")
+
+      
+
+
+
+
+      
+      
+      doc.save("referenciaOxxo.pdf")
+    }
+    else if (paymentSelected=="paypal"){
+      const doc =jsPDF('p','pt');
+
+      doc.text(170,80,'Recibo de pago con referencia Paypal')
+      doc.setFont('courier');
+
+      //set the font type
+   
+      doc.addImage("https://www.actualidadecommerce.com/wp-content/uploads/2020/10/paypal.png",200,90,200,100)
+
+      doc.text(120,250,'Nombre: '+ user.nombre +" "+ user.apellidoPaterno+" "+user.apellidoMaterno)
+      doc.text(120,270,'Datos de compra')
+      doc.text(120,290,!context.salonSelected?('Salon: '+" "+"$"+"0"):('Salon: '+" "+"$"+context.salonSelected.precio))
+      doc.text(120,310,!context.mesaSelected?('Mesas: '+" "+"$"+"0"):('Mesas: '+" "+"$"+(context.mesaSelected.precioUnitario * context.mesasQuantity)))
+      doc.text(120,330,!context.sillaSelected?('Sillas: '+"$"+"0"):('Sillas: '+"$"+(context.sillaSelected.precioUnitario * context.sillasQuantity)))
+      doc.text(120,350,!context.sonidoSelected?('Sonido: '+"$"+"0"):('Sonido: '+"$"+context.sonidoSelected.precioHora))
+      doc.text(120,365,"--------------------------------------")
+      doc.text(350,380,"Total: "+"$"+pagoTotal)
+      doc.text(120,420,"Numero de referencia de pago:")
+      doc.text(120,440,"13213543510313121321")
+
+      
+
+
+
+
+      
+      
+      doc.save("referenciaPaypal.pdf")
+    }else if(paymentSelected==undefined){
+      alert("You need to select a Payment Method")
+    }
+
+
+  }
   
   return (
     <>
@@ -152,7 +225,7 @@ const Pago = () => {
             <h4>{"$"+getTotal()}</h4>
           </div>
           <div className="confirm-button">
-            <Button>Confirmar solicitud</Button>
+            <Button onClick={generateRecibe}>Confirmar solicitud</Button>
           </div>
         </div>
       </div>
